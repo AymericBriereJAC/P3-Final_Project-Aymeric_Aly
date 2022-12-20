@@ -37,7 +37,7 @@
             
         </Grid>
         <Button Margin="28,358,28,34" x:Name="addCart" Click="AddCart_Click" Content="Add Item To cart"/>
-        <Button Grid.Column="2" Content="BBBBBBBB"/>
+       
 
         <Label Content="Cart" Grid.Column="1" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" Margin="0,31,0,-31"/>
         <ListView x:Name="lvCartItems" ItemsSource="{Binding LbItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Height="250" Grid.Column="1" Margin="10,10,10,10">
@@ -48,6 +48,23 @@
             </ListView.ItemTemplate>
         </ListView>
         <Button Grid.Column="1" x:Name="Delete" Click="Delete_Click" Content="Remove From Cart" Margin="27,358,133,34"/>
+
+
+        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+            <Button Content="Pay with cash" Click="payCash_Click" Margin="5"/>
+            <Label Content="Select the bill you are going to pay with:" Margin="5"/>
+            <ComboBox x:Name="comboBox" SelectedIndex="0" Margin="5">
+                <ComboBoxItem>$5</ComboBoxItem>
+                <ComboBoxItem>$10</ComboBoxItem>
+                <ComboBoxItem>$20</ComboBoxItem>
+                <ComboBoxItem>$50</ComboBoxItem>
+                <ComboBoxItem>$100</ComboBoxItem>
+            </ComboBox>
+            <Button Content="Pay with credit card" Click="payDebit_Click" Margin="5"/>
+            <Label Content="Note: You need to have at least 5$ worth of items in your cart" Margin="5"/>
+        </StackPanel>
+
+       
 
 
     </Grid>

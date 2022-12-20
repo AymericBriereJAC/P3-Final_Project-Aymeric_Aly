@@ -77,5 +77,11 @@ namespace FinalProject_Alejandro_Aymeric
         {
             lbItems.Items.Remove(lbItems.SelectedIndex);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
+    
