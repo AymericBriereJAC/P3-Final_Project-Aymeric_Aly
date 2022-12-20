@@ -43,7 +43,7 @@
         <ListView x:Name="lvCartItems" ItemsSource="{Binding LbItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Height="250" Grid.Column="1" Margin="10,10,10,10">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding}" />
+                    <TextBlock Text="{Binding LbItems.Text}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
