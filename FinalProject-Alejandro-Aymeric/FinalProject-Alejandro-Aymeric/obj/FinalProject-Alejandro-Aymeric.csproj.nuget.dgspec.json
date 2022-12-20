@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\P3-Project\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric.csproj": {}
   },
   "projects": {
@@ -12,22 +13,34 @@
         "projectPath": "C:\\P3-Project\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric.csproj",
         "packagesPath": "C:\\Users\\Aymeric Briere\\.nuget\\packages\\",
         "outputPath": "C:\\P3-Project\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\obj\\",
+=======
+    "C:\\Users\\alyca\\source\\repos\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\alyca\\source\\repos\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\alyca\\source\\repos\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric.csproj",
+        "projectName": "FinalProject-Alejandro-Aymeric",
+        "projectPath": "C:\\Users\\alyca\\source\\repos\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric.csproj",
+        "packagesPath": "C:\\Users\\alyca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alyca\\source\\repos\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\obj\\",
+>>>>>>> 651595b892ca816bf2aca70d6621310d96402239
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Aymeric Briere\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alyca\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,7 +72,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.29, 3.1.29]"
+              "version": "[3.1.28, 3.1.28]"
             }
           ],
           "frameworkReferences": {
@@ -70,7 +83,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
