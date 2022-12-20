@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\P3-Project\\PIII_Final_Project_Alejandro_Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric.csproj",
+      "projectUniqueName": "C:\\P3-Project\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric.csproj",
       "projectName": "FinalProject-Alejandro-Aymeric",
-      "projectPath": "C:\\P3-Project\\PIII_Final_Project_Alejandro_Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric.csproj",
+      "projectPath": "C:\\P3-Project\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric.csproj",
       "packagesPath": "C:\\Users\\Aymeric Briere\\.nuget\\packages\\",
-      "outputPath": "C:\\P3-Project\\PIII_Final_Project_Alejandro_Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\obj\\",
+      "outputPath": "C:\\P3-Project\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
