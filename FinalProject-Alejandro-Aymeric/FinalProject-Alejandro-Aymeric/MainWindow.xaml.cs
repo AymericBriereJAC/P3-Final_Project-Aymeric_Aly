@@ -23,6 +23,9 @@ namespace FinalProject_Alejandro_Aymeric
     {
         private List<ProductData> products = new List<ProductData>();
         private List<ProductData> cart = new List<ProductData>();
+
+       
+
         public MainWindow()
         {
             InitializeComponent();
@@ -49,23 +52,23 @@ namespace FinalProject_Alejandro_Aymeric
             }
         }
 
-        private void addCart_Click(object sender, RoutedEventArgs e)
+        private void AddCart_Click(object sender, RoutedEventArgs e)
         {
             if (lbItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to add to the cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
             else cart.Add(products[lbItems.SelectedIndex]);
         }
 
-        private void lbCart_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void LbCart_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void lbCart_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void LbCart_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
         }
 
-        private void lbItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void LbItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (products[lbItems.SelectedIndex].Quantity <= 0) MessageBox.Show($"No {lbItems.SelectedItem} left", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
         }
