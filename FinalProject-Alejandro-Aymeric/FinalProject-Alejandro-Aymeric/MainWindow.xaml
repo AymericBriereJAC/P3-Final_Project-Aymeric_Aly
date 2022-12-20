@@ -47,6 +47,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Grid.Column="1" x:Name="Delete" Click="Delete_Click" Content="Remove From Cart" Margin="27,358,133,34"/>
 
 
     </Grid>

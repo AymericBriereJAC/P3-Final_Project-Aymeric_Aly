@@ -72,5 +72,10 @@ namespace FinalProject_Alejandro_Aymeric
         {
             if (products[lbItems.SelectedIndex].Quantity <= 0) MessageBox.Show($"No {lbItems.SelectedItem} left", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            lbItems.Items.Remove(lbItems.SelectedIndex);
+        }
     }
 }
