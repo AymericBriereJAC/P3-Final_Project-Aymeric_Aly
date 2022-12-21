@@ -1,0 +1,13 @@
+Apple, 2, 5
+Cereal, 5, 32
+Cheese, 8, 10
+Chives, 3, 15
+Juice, 6, 25
+Milk, 5, 10
+Pear, 3, 20
+Whey Protein, 10, 34
+Chocoate Bar, 2.50, 50
+Cookie, 3.00, 42
+Gatorade, 3.50, 20
+Candy, 2.50, 20
+Red Bull, 3, 45

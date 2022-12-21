@@ -1,6 +1,7 @@
 ﻿using FinalProject_Alejandro_Aymeric.Items;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,62 +22,56 @@ namespace FinalProject_Alejandro_Aymeric
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<ProductData> products = new List<ProductData>();
-        private List<ProductData> cart = new List<ProductData>();
+        private List<Product> products = new List<Product>();
+        private List<Product> cart = new List<Product>();
         private List<int> BillAmounts = new List<int>() { 5, 10, 20, 50, 100 };
         public MainWindow()
         {
             InitializeComponent();
 
-            products.Add(CreateProduct("Apple.txt"));
-            products.Add(CreateProduct("Cereal.txt"));
-            products.Add(CreateProduct("Cheese.txt"));
-            products.Add(CreateProduct("Chives.txt"));
-            products.Add(CreateProduct("Juice.txt"));
-            products.Add(CreateProduct("Milk.txt"));
-            products.Add(CreateProduct("Pear.txt"));
-            products.Add(CreateProduct("WheyProtein.txt"));
+            AddProducts("items.txt", products);
 
             //Set the Cart listview source to the cart array
             lvCartItems.ItemsSource = cart;
+            lvItems.ItemsSource = products;
         }
-        private ProductData CreateProduct(string file)
+        private void AddProducts(string file, List<Product> toAdd)
         {
             try
             {
-                return new ProductData(file);
+                if (File.Exists(file))
+                {
+                    string line;
+
+                    using (StreamReader reader = new StreamReader(file))
+                    {
+                        while((line = reader.ReadLine()) != null)
+                        {
+                            string[] itemOptions = line.Split(',');
+                            toAdd.Add(new Product(itemOptions[0], Convert.ToDecimal(itemOptions[1]), Convert.ToInt32(itemOptions[2])));
+                        }
+                    }
+                }
+                else throw new ArgumentException("An error occured while fetching the available items");
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, "An error occured", MessageBoxButton.OK, MessageBoxImage.Error); //an error occured, show the appropriate error message
-                return null;
             }
+
+            lvItems.Items.Refresh();
         }
 
         private void AddCart_Click(object sender, RoutedEventArgs e)
         {
-            if (lbItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to add to the cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
+            if (lvItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to add to the cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
-                cart.Add(products[lbItems.SelectedIndex]);
-                products[lbItems.SelectedIndex].Quantity -= 1;
+                cart.Add(products[lvItems.SelectedIndex]);
+                products[lvItems.SelectedIndex].Quantity -= 1;
                 lvCartItems.Items.Refresh();
+                lvItems.Items.Refresh();
             }
-        }
-
-        private void LbCart_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void LbCart_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void LbItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (products[lbItems.SelectedIndex].Quantity <= 0) MessageBox.Show($"No {lbItems.SelectedItem} left", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void payCash_Click(object sender, RoutedEventArgs e)
@@ -105,7 +100,7 @@ namespace FinalProject_Alejandro_Aymeric
             }
         }
 
-        public decimal GetTotal(List<ProductData> toAddd)
+        public decimal GetTotal(List<Product> toAddd)
         {
             decimal total = 0;
 
@@ -126,9 +121,11 @@ namespace FinalProject_Alejandro_Aymeric
 
         }
 
-        private void Delete_Click(object sender, RoutedEventArgs e)
+        private void Delete_Click(object sender, RoutedEventArgs e) //todo ItemsControl.ItemsSource 
         {
-            lvCartItems.Items.Remove(lvCartItems.SelectedItems);
+            lvCartItems.Items.Remove(lvCartItems.SelectedItem);
+            lvCartItems.Items.Refresh();
+            
         }
 
         private void lvCartItems_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -18,13 +18,13 @@ namespace FinalProject_Alejandro_Aymeric
     /// </summary>
     public partial class ReceiptWindow : Window
     {
-        public ReceiptWindow(List<ProductData> products, List<ProductData> cart, string paymentMethod)
+        public ReceiptWindow(List<Product> products, List<Product> cart, string paymentMethod)
         {
             InitializeComponent();
 
             // Calculate the total cost of the items in the cart
             decimal totalCost = 0;
-            foreach (ProductData item in cart)
+            foreach (Product item in cart)
             {
                 totalCost += item.Price;
             }
@@ -33,7 +33,7 @@ namespace FinalProject_Alejandro_Aymeric
             string receiptText = "Thank you for your purchase!\n\n";
             receiptText += "Items:\n";
             int currentItemQuantity = 0;
-            foreach (ProductData item in products)
+            foreach (Product item in products)
             {
                 currentItemQuantity = GetItemQuantity(cart, item.Name);
 
@@ -58,11 +58,11 @@ namespace FinalProject_Alejandro_Aymeric
             return null;   //the window was not found, return null
         }
 
-        private int GetItemQuantity(List<ProductData> toCount, string productName)
+        private int GetItemQuantity(List<Product> toCount, string productName)
         {
             int counter = 0;
 
-            foreach (ProductData item in toCount)
+            foreach (Product item in toCount)
                 if(item.Name == productName)
                     counter++;
 
