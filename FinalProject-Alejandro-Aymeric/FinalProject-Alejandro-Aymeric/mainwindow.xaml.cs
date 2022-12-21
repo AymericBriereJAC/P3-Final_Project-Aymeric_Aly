@@ -121,13 +121,6 @@ namespace FinalProject_Alejandro_Aymeric
 
         }
 
-        private void Delete_Click(object sender, RoutedEventArgs e) //todo ItemsControl.ItemsSource 
-        {
-            lvCartItems.Items.Remove(lvCartItems.SelectedItem);
-            lvCartItems.Items.Refresh();
-            
-        }
-
         private void lvCartItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -136,6 +129,18 @@ namespace FinalProject_Alejandro_Aymeric
         private void ListBoxItem_Selected_1(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if(lvCartItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to remove from your cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
+            {
+                cart[lvCartItems.SelectedIndex].Quantity += 1;
+                cart.RemoveAt(lvCartItems.SelectedIndex);
+                lvCartItems.Items.Refresh();
+                lvItems.Items.Refresh();
+            }
         }
     }
 }

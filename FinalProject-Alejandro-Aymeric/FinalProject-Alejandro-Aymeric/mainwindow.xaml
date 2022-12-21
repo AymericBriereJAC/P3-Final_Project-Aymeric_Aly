@@ -83,7 +83,7 @@
             </ListView.View>
         </ListView>
         <!--Button to delete the selected product from the cart-->
-        <Button Grid.Column="2" x:Name="Delete" Content="Remove From Cart" Margin="41,363,283,420" Click="Delete_Click" />
+        <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" Margin="41,363,283,420" Click="btnDelete_Click"/>
         <StackPanel Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="18,445,109,0">
             <!--Panel where user can select their payment method-->
             <Label Content="Payment Method" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
