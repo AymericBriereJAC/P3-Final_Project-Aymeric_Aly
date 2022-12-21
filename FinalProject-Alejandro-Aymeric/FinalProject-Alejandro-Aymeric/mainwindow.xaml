@@ -48,9 +48,8 @@
 
 
 
-<<<<<<< Updated upstream
-        <Label Content="Add to cart" Grid.Column="1" Margin="0,621,0,185" FontWeight="Bold" HorizontalAlignment="Center" FontSize="15"/>
-        <Button Margin="363,660,363,98" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
+        <Label Content="Add to cart" Grid.Column="1" Margin="0,660,0,146" FontWeight="Bold" HorizontalAlignment="Center" FontSize="15"/>
+        <Button Margin="363,716,363,42" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
             <Button.ContentTemplate>
                 <DataTemplate>
                     <Image Source="/Images/ShoppingCart.png"/>
@@ -58,16 +57,13 @@
                 </DataTemplate>
             </Button.ContentTemplate>
         </Button>
-=======
-        <Label Content="Add to cart" Grid.Column="1" Margin="411,690,0,116" FontWeight="Bold" HorizontalAlignment="Left" FontSize="15"/>
-        <Button Margin="352,729,373,29" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
-            <Image Source="/Images/ShoppingCart.png"/>
-        </Button>
-       
 
 
 
->>>>>>> Stashed changes
+
+
+
+
 
 
         <Label Content="Cart" Grid.Column="2" FontWeight="Bold" FontSize="40" HorizontalAlignment="Left" Margin="72,31,0,-31" Width="90"/>
@@ -94,11 +90,10 @@
             </ListView.View>
         </ListView>
         <!--Button to delete the selected product from the cart-->
-<<<<<<< Updated upstream
+
         <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" Margin="41,363,283,420" Click="btnDelete_Click"/>
-=======
-        <Button Grid.Column="2" x:Name="Delete" Content="Remove From Cart" Margin="53,363,272,420" Click="Delete_Click" />
->>>>>>> Stashed changes
+
+
         <StackPanel Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="18,445,109,0">
             <!--Panel where user can select their payment method-->
             <Label Content="Payment Method" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
