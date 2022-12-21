@@ -47,10 +47,13 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <!--Button to delete the selected product from the cart-->
         <Button Grid.Column="2" x:Name="Delete" Content="Remove From Cart" Margin="49,374,282,42" Click="Delete_Click" />
         <StackPanel Grid.Column="2" VerticalAlignment="Top" Height="200" Margin="339,96,5,0">
+            <!--Panel where user can select their payment method-->
+            <Label Content="Payment Method" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+            <Label Content="Select the bill you are going to pay with if you are paying cash:" Margin="5"/>
             <Button Content="Pay with cash" Click="payCash_Click"/>
-            <Label Content="Select the bill you are going to pay with:" Margin="5"/>
             <ComboBox x:Name="comboBox" SelectedIndex="0" Margin="5">
                 <ComboBoxItem Content="$5"/>
                 <ComboBoxItem Content="$10"/>
