@@ -126,9 +126,10 @@ namespace FinalProject_Alejandro_Aymeric
 
         }
 
-        private void Delete_Click(object sender, RoutedEventArgs e)
+        private void Delete_Click(object sender, RoutedEventArgs e) //todo ItemsControl.ItemsSource 
         {
-            lvCartItems.Items.Remove(lvCartItems.SelectedItems);
+            lvCartItems.Items.Remove(lvCartItems.SelectedItem);
+            lvCartItems.Items.Refresh();
             
         }
 

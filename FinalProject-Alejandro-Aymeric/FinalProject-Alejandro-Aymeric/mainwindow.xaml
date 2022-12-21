@@ -15,8 +15,8 @@
 
         </Grid.ColumnDefinitions>
         <!--List box element that shows the products and their names prices to be added-->
-        <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Left" FontSize="30" Margin="117,42,0,42" Width="136" Grid.Column="1"/>
-        <ListBox Margin="10,92,0,92" Grid.Column="0" x:Name="lbItems" SelectionChanged="LbItems_SelectionChanged" SelectionMode="Single" Grid.ColumnSpan="2">
+        <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Margin="0,42,0,42" Width="136" Grid.Column="1"/>
+        <ListBox Margin="309,117,309,233" Grid.Column="1" x:Name="lbItems" SelectionChanged="LbItems_SelectionChanged" SelectionMode="Single" Background="Tan" FontSize="25" FontStyle="Italic" BorderBrush="Black" BorderThickness="2,2">
             <ListBoxItem>Apples</ListBoxItem>
             <ListBoxItem>Chives</ListBoxItem>
             <ListBoxItem>Pear</ListBoxItem>
@@ -33,19 +33,26 @@
 
 
 
+        <Label Content="Add to cart" Grid.Column="1" Margin="0,621,0,185" FontWeight="Bold" HorizontalAlignment="Center" FontSize="15"/>
+        <Button Margin="363,660,363,98" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
+            <Button.ContentTemplate>
+                <DataTemplate>
+                    <Image Source="/Images/ShoppingCart.png"/> <!--make image stay on button-->
+                </DataTemplate>
+            </Button.ContentTemplate>
 
-        <Button Margin="11,358,28,34" x:Name="addCart" Click="AddCart_Click" Content="Add Item To cart" Grid.Column="1"/>
+        </Button>
 
 
         <Label Content="Cart" Grid.Column="2" FontWeight="Bold" FontSize="40" HorizontalAlignment="Left" Margin="72,31,0,-31" Width="90"/>
-        <ListView x:Name="lvCartItems" Grid.Column="2" Margin="69,92,192,92">
+        <ListView x:Name="lvCartItems" Grid.Column="2" Margin="19,91,261,514" Background="Tan" BorderBrush="Black" BorderThickness="2">
             <ListView.View>
                 <GridView>
                     <!-- Show the content of every segment -->
                     <GridViewColumn Header="Product" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Label Content="{Binding Name}" Foreground="Navy"/>
+                                <Label Content="{Binding Name}" Foreground="Black" FontWeight="Bold" FontSize="15"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -53,7 +60,7 @@
                     <GridViewColumn Header="Price" Width="120">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Label Content="{Binding Price}" Foreground="Navy"/>
+                                <Label Content="{Binding Price}" Foreground="ForestGreen" FontWeight="Bold" FontSize="15"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -61,12 +68,12 @@
             </ListView.View>
         </ListView>
         <!--Button to delete the selected product from the cart-->
-        <Button Grid.Column="2" x:Name="Delete" Content="Remove From Cart" Margin="87,370,174,46" Click="Delete_Click" />
-        <StackPanel Grid.Column="2" VerticalAlignment="Top" Height="200" Margin="231,107,10,0">
+        <Button Grid.Column="2" x:Name="Delete" Content="Remove From Cart" Margin="41,363,283,420" Click="Delete_Click" />
+        <StackPanel Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="18,445,109,0">
             <!--Panel where user can select their payment method-->
             <Label Content="Payment Method" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
             <Label Content="Select the bill you are going to pay with if you are paying cash:" Margin="5"/>
-            <Button Content="Pay with cash" Click="payCash_Click"/>
+            <Button Content="Pay with cash" Click="payCash_Click" Width="341"/>
             <ComboBox x:Name="comboBox" SelectedIndex="0" Margin="5">
                 <ComboBoxItem Content="$5"/>
                 <ComboBoxItem Content="$10"/>
