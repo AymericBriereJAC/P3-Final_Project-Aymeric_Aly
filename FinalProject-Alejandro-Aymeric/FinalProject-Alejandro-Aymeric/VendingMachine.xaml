@@ -8,12 +8,12 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="267*" />
-            <ColumnDefinition Width="406*" />
+            <ColumnDefinition Width="403*" />
+            <ColumnDefinition Width="397*" />
 
         </Grid.ColumnDefinitions>
 
-        <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Margin="0,42,0,42" Width="135"/>
+        <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Margin="0,42,0,42" Width="136"/>
         <ListBox Margin="10,92,0,92" Grid.Column="0" x:Name="lbItems" SelectionChanged="LbItems_SelectionChanged" SelectionMode="Single">
             <ListBoxItem>Apples</ListBoxItem>
             <ListBoxItem>Chives</ListBoxItem>

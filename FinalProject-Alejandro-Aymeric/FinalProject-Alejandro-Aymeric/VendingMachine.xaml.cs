@@ -119,5 +119,10 @@ namespace FinalProject_Alejandro_Aymeric
         {
             lvCartItems.Items.Remove(lvCartItems.SelectedItems);
         }
+
+        private void lvCartItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
