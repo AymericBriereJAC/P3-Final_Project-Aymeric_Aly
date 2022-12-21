@@ -25,11 +25,9 @@ C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\bin\Debug\netcoreapp3.1\FinalProject-Alejandro-Aymeric.dll
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\bin\Debug\netcoreapp3.1\FinalProject-Alejandro-Aymeric.pdb
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\FinalProject-Alejandro-Aymeric.csproj.AssemblyReference.cache
-C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\FinalProject-Alejandro-Aymeric_MarkupCompile.cache
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\FinalProject-Alejandro-Aymeric_MarkupCompile.lref
-C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\MainWindow.baml
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\FinalProject-Alejandro-Aymeric.g.resources
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\FinalProject-Alejandro-Aymeric.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\FinalProject-Alejandro-Aymeric.AssemblyInfoInputs.cache
@@ -38,3 +36,7 @@ C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\FinalProject-Alejandro-Aymeric.dll
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\FinalProject-Alejandro-Aymeric.pdb
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\FinalProject-Alejandro-Aymeric.genruntimeconfig.cache
+C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\Receipt.g.cs
+C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\VendingMachine.g.cs
+C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\Receipt.baml
+C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\VendingMachine.baml

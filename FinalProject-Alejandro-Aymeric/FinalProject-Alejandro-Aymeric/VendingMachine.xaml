@@ -8,63 +8,57 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="267*" />
+            <ColumnDefinition Width="406*" />
+
         </Grid.ColumnDefinitions>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Label Content="Products" Grid.Column="0" Grid.Row="1" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Height="350"></Label>
-            <ListBox Grid.Column="0" x:Name="lbItems" SelectionChanged="LbItems_SelectionChanged" SelectionMode="Single" Height="250">
-                <ListBoxItem>Apples</ListBoxItem>
-                <ListBoxItem>Chives</ListBoxItem>
-                <ListBoxItem>Pear</ListBoxItem>
-                <ListBoxItem>Cereal</ListBoxItem>
-                <ListBoxItem>Cheese</ListBoxItem>
-                <ListBoxItem>Milk</ListBoxItem>
-                <ListBoxItem>Juice</ListBoxItem>
-                <ListBoxItem>Whey Protein</ListBoxItem>
-                <ListBoxItem>Meat</ListBoxItem>
-                <ListBoxItem>Chicken</ListBoxItem>
-                <ListBoxItem>Lamb</ListBoxItem>
-                <ListBoxItem>Sauce</ListBoxItem>
-            </ListBox>
+
+        <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Margin="0,42,0,42" Width="135"/>
+        <ListBox Margin="10,92,0,92" Grid.Column="0" x:Name="lbItems" SelectionChanged="LbItems_SelectionChanged" SelectionMode="Single">
+            <ListBoxItem>Apples</ListBoxItem>
+            <ListBoxItem>Chives</ListBoxItem>
+            <ListBoxItem>Pear</ListBoxItem>
+            <ListBoxItem>Cereal</ListBoxItem>
+            <ListBoxItem>Cheese</ListBoxItem>
+            <ListBoxItem>Milk</ListBoxItem>
+            <ListBoxItem>Juice</ListBoxItem>
+            <ListBoxItem>Whey Protein</ListBoxItem>
+            <ListBoxItem>Meat</ListBoxItem>
+            <ListBoxItem>Chicken</ListBoxItem>
+            <ListBoxItem>Lamb</ListBoxItem>
+            <ListBoxItem>Sauce</ListBoxItem>
+        </ListBox>
 
 
-            
-        </Grid>
+
+
         <Button Margin="28,358,28,34" x:Name="addCart" Click="AddCart_Click" Content="Add Item To cart"/>
-       
 
-        <Label Content="Cart" Grid.Column="1" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" Margin="0,31,0,-31"/>
-        <ListView x:Name="lvCartItems" ItemsSource="{Binding LbItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Height="250" Grid.Column="1" Margin="10,10,10,10">
+
+        <Label Content="Cart" Grid.Column="1" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" Margin="0,31,0,-31" Width="90"/>
+        <ListView x:Name="lvCartItems" ItemsSource="{Binding LbItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Grid.Column="1" Margin="163,92,163,92">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding LbItems.Text}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Grid.Column="1" x:Name="Delete" Click="Delete_Click" Content="Remove From Cart" Margin="27,358,133,34"/>
-
-
-        <StackPanel Grid.Column="2" VerticalAlignment="Center">
-            <Button Content="Pay with cash" Click="payCash_Click" Margin="5"/>
+        <Button Grid.Column="1" x:Name="Delete" Content="Remove From Cart" Margin="163,358,149,34" Click="Delete_Click" />
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" Height="182" Margin="334,94,10,0">
+            <Button Content="Pay with cash" Click="payCash_Click"/>
             <Label Content="Select the bill you are going to pay with:" Margin="5"/>
             <ComboBox x:Name="comboBox" SelectedIndex="0" Margin="5">
-                <ComboBoxItem>$5</ComboBoxItem>
-                <ComboBoxItem>$10</ComboBoxItem>
-                <ComboBoxItem>$20</ComboBoxItem>
-                <ComboBoxItem>$50</ComboBoxItem>
-                <ComboBoxItem>$100</ComboBoxItem>
+                <ComboBoxItem Content="$5"/>
+                <ComboBoxItem Content="$10"/>
+                <ComboBoxItem Content="$20"/>
+                <ComboBoxItem Content="$50"/>
+                <ComboBoxItem Content="$100"/>
             </ComboBox>
             <Button Content="Pay with credit card" Click="payDebit_Click" Margin="5"/>
             <Label Content="Note: You need to have at least 5$ worth of items in your cart" Margin="5"/>
         </StackPanel>
 
-       
+
 
 
     </Grid>
