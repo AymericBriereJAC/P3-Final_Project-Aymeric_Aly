@@ -39,7 +39,7 @@
 
 
         <Label Content="Cart" Grid.Column="2" FontWeight="Bold" FontSize="40" HorizontalAlignment="Left" Margin="35,31,0,-31" Width="90"/>
-        <ListView x:Name="lvCartItems" ItemsSource="{Binding lbItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Grid.Column="2" Margin="47,92,279,92">
+        <ListView x:Name="lvCartItems" ItemsSource="{Binding LvCartItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Grid.Column="2" Margin="47,92,279,92">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding LvCartItems}" />
