@@ -15,7 +15,7 @@
             <ColumnDefinition Width="261*" />
 
         </Grid.ColumnDefinitions>
-
+        <!--List box element that shows the products and their names prices to be added-->
         <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Left" FontSize="30" Margin="117,42,0,42" Width="136" Grid.Column="1"/>
         <ListBox Margin="10,92,0,92" Grid.Column="0" x:Name="lbItems" SelectionChanged="LbItems_SelectionChanged" SelectionMode="Single" Grid.ColumnSpan="2">
             <ListBoxItem>Apples</ListBoxItem>
@@ -33,11 +33,11 @@
         </ListBox>
 
 
-
+        <!--Button to add the selected item to the cart-->
 
         <Button Margin="11,358,28,34" x:Name="addCart" Click="AddCart_Click" Content="Add Item To cart" Grid.Column="1"/>
 
-
+        <!--Cart which is a list view of the new list created by the objects that are in the cart-->
         <Label Content="Cart" Grid.Column="2" FontWeight="Bold" FontSize="40" HorizontalAlignment="Left" Margin="72,31,0,-31" Width="90"/>
         <ListView x:Name="lvCartItems" ItemsSource="{Binding LvCartItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Grid.Column="2" Margin="69,92,192,92">
             <ListView.ItemTemplate>
@@ -53,6 +53,7 @@
             <!--Panel where user can select their payment method-->
             <Label Content="Payment Method" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
             <Label Content="Select the bill you are going to pay with if you are paying cash:" Margin="5"/>
+            <!--Pay with cash button, sends you to the receipt window once clicked-->
             <Button Content="Pay with cash" Click="payCash_Click"/>
             <ComboBox x:Name="comboBox" SelectedIndex="0" Margin="5">
                 <ComboBoxItem Content="$5"/>
@@ -61,6 +62,7 @@
                 <ComboBoxItem Content="$50"/>
                 <ComboBoxItem Content="$100"/>
             </ComboBox>
+            <!--Pay with credit sends you to receipt window once clicked-->
             <Button Content="Pay with credit card" Click="payDebit_Click" Margin="5"/>
             <Label Content="Note: You need to have at least 5$ worth of items in your cart" Margin="5"/>
         </StackPanel>
