@@ -6,16 +6,18 @@
         xmlns:local="clr-namespace:FinalProject_Alejandro_Aymeric"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        WindowState="Maximized">
-    <Grid>
+        WindowState="Maximized"
+        ResizeMode="NoResize">
+    <Grid Margin="0,0,10,-6">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="403*" />
+            <ColumnDefinition Width="17*" />
+            <ColumnDefinition Width="386*"/>
             <ColumnDefinition Width="397*" />
 
         </Grid.ColumnDefinitions>
 
-        <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Margin="0,42,0,42" Width="136"/>
-        <ListBox Margin="10,92,0,92" Grid.Column="0" x:Name="lbItems" SelectionChanged="LbItems_SelectionChanged" SelectionMode="Single">
+        <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Left" FontSize="30" Margin="117,42,0,42" Width="136" Grid.Column="1"/>
+        <ListBox Margin="10,92,0,92" Grid.Column="0" x:Name="lbItems" SelectionChanged="LbItems_SelectionChanged" SelectionMode="Single" Grid.ColumnSpan="2">
             <ListBoxItem>Apples</ListBoxItem>
             <ListBoxItem>Chives</ListBoxItem>
             <ListBoxItem>Pear</ListBoxItem>
@@ -33,19 +35,20 @@
 
 
 
-        <Button Margin="28,358,28,34" x:Name="addCart" Click="AddCart_Click" Content="Add Item To cart"/>
+        <Button Margin="11,358,28,34" x:Name="addCart" Click="AddCart_Click" Content="Add Item To cart" Grid.Column="1"/>
 
 
-        <Label Content="Cart" Grid.Column="1" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" Margin="0,31,0,-31" Width="90"/>
-        <ListView x:Name="lvCartItems" ItemsSource="{Binding LbItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Grid.Column="1" Margin="163,92,163,92">
+        <Label Content="Cart" Grid.Column="2" FontWeight="Bold" FontSize="40" HorizontalAlignment="Left" Margin="35,31,0,-31" Width="90"/>
+        <ListView x:Name="lvCartItems" ItemsSource="{Binding lbItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Grid.Column="2" Margin="47,92,279,92">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding LvCartItems.Text}" /> <!--fix binding to list view items and refresh list -->
+                    <TextBlock Text="{Binding LvCartItems}" />
+                    <!--fix binding to list view items and refresh list -->
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Grid.Column="1" x:Name="Delete" Content="Remove From Cart" Margin="163,358,149,34" Click="Delete_Click" />
-        <StackPanel Grid.Column="1" VerticalAlignment="Top" Height="200" Margin="334,94,10,0">
+        <Button Grid.Column="2" x:Name="Delete" Content="Remove From Cart" Margin="49,374,282,42" Click="Delete_Click" />
+        <StackPanel Grid.Column="2" VerticalAlignment="Top" Height="200" Margin="339,96,5,0">
             <Button Content="Pay with cash" Click="payCash_Click"/>
             <Label Content="Select the bill you are going to pay with:" Margin="5"/>
             <ComboBox x:Name="comboBox" SelectedIndex="0" Margin="5">
