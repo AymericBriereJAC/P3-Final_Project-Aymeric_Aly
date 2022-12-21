@@ -119,6 +119,7 @@ namespace FinalProject_Alejandro_Aymeric
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             lvCartItems.Items.Remove(lvCartItems.SelectedItems);
+            
         }
 
         private void lvCartItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
