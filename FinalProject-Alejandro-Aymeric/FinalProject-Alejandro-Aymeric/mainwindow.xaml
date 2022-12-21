@@ -52,18 +52,10 @@
         <Button Margin="363,660,363,98" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
             <Button.ContentTemplate>
                 <DataTemplate>
-                    <Image Source="/Images/ShoppingCart.png"/> <!--make image stay on button-->
+                    <Image Source="/Images/ShoppingCart.png"/>
+                    <!--make image stay on button-->
                 </DataTemplate>
             </Button.ContentTemplate>
-
-        <Label Content="Add to cart" Grid.Column="1" Margin="0,621,0,185" FontWeight="Bold" HorizontalAlignment="Center" FontSize="15"/>
-        <Button Margin="363,660,363,98" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
-            <Button.ContentTemplate>
-                <DataTemplate>
-                    <Image Source="/Images/ShoppingCart.png"/> <!--make image stay on button-->
-                </DataTemplate>
-            </Button.ContentTemplate>
-
         </Button>
 
 
