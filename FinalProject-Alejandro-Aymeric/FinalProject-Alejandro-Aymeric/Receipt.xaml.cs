@@ -18,7 +18,7 @@ namespace FinalProject_Alejandro_Aymeric
     /// </summary>
     public partial class ReceiptWindow : Window
     {
-        public ReceiptWindow(List<ProductData> cart, string paymentMethod)
+        public ReceiptWindow(List<ProductData> products, List<ProductData> cart, string paymentMethod)
         {
             InitializeComponent();
 
@@ -26,15 +26,19 @@ namespace FinalProject_Alejandro_Aymeric
             decimal totalCost = 0;
             foreach (ProductData item in cart)
             {
-                totalCost += item.Price * item.Quantity;
+                totalCost += item.Price;
             }
 
             // Set the receipt text
             string receiptText = "Thank you for your purchase!\n\n";
             receiptText += "Items:\n";
-            foreach (ProductData item in cart)
+            int currentItemQuantity = 0;
+            foreach (ProductData item in products)
             {
-                receiptText += $"{item.Name} x{item.Quantity} @ ${item.Price:F2} each = ${item.Price * item.Quantity:F2}\n";
+                currentItemQuantity = GetItemQuantity(cart, item.Name);
+
+                if(currentItemQuantity > 0)
+                    receiptText += $"{item.Name} x{currentItemQuantity} @ ${item.Price:F2} each = ${item.Price * currentItemQuantity:F2}\n";
             }
             receiptText += $"\nTotal: ${totalCost:F2}\n";
             receiptText += $"Payment Method: {paymentMethod}\n";
@@ -52,6 +56,17 @@ namespace FinalProject_Alejandro_Aymeric
             }
 
             return null;   //the window was not found, return null
+        }
+
+        private int GetItemQuantity(List<ProductData> toCount, string productName)
+        {
+            int counter = 0;
+
+            foreach (ProductData item in toCount)
+                if(item.Name == productName)
+                    counter++;
+
+            return counter;
         }
     }
 }

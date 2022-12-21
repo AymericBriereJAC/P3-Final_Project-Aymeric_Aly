@@ -36,6 +36,9 @@ namespace FinalProject_Alejandro_Aymeric
             products.Add(CreateProduct("Milk.txt"));
             products.Add(CreateProduct("Pear.txt"));
             products.Add(CreateProduct("WheyProtein.txt"));
+
+            //Set the Cart listview source to the cart array
+            lvCartItems.ItemsSource = cart;
         }
         private ProductData CreateProduct(string file)
         {
@@ -55,7 +58,7 @@ namespace FinalProject_Alejandro_Aymeric
             if (lbItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to add to the cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
-                lvCartItems.Items.Add(lbItems.SelectedIndex.ToString());
+                cart.Add(products[lbItems.SelectedIndex]);
                 products[lbItems.SelectedIndex].Quantity -= 1;
                 lvCartItems.Items.Refresh();
             }
@@ -78,9 +81,15 @@ namespace FinalProject_Alejandro_Aymeric
 
         private void payCash_Click(object sender, RoutedEventArgs e)
         {
-            // Show the ReceiptWindow
-            ReceiptWindow receiptWindow = new ReceiptWindow(cart, "Cash");
-            receiptWindow.Show();
+            decimal total = GetTotal(cart);
+
+            if (total <= 0) MessageBox.Show($"You need to have at least one item in your cart in order to pass the checkout", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
+            {
+                // Show the ReceiptWindow
+                ReceiptWindow receiptWindow = new ReceiptWindow(products, cart, "Cash");
+                receiptWindow.Show();
+            }
         }
 
         private void payDebit_Click(object sender, RoutedEventArgs e)
@@ -88,9 +97,10 @@ namespace FinalProject_Alejandro_Aymeric
             decimal total = GetTotal(cart);
 
             if (total < 5) MessageBox.Show($"You need to have at least 5$ worth of items to pay with a debit card", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
+            else if (total <= 0) MessageBox.Show($"You need to have at least one item in your cart in order to pass the checkout", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
-                ReceiptWindow receiptWindow = new ReceiptWindow(cart, "Debit Card");
+                ReceiptWindow receiptWindow = new ReceiptWindow(products, cart, "Debit Card");
                 receiptWindow.Show();
             }
         }
@@ -122,6 +132,11 @@ namespace FinalProject_Alejandro_Aymeric
         }
 
         private void lvCartItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ListBoxItem_Selected_1(object sender, RoutedEventArgs e)
         {
 
         }

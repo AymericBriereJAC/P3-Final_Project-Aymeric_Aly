@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject_Alejandro_Aymeric"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        WindowState="Maximized"
+        Title="Vending Machine" Height="850" Width="1450"
         ResizeMode="NoResize">
     <Grid Margin="0,0,10,-6">
         <Grid.ColumnDefinitions>
@@ -24,28 +23,36 @@
             <ListBoxItem>Cereal</ListBoxItem>
             <ListBoxItem>Cheese</ListBoxItem>
             <ListBoxItem>Milk</ListBoxItem>
-            <ListBoxItem>Juice</ListBoxItem>
+            <ListBoxItem Selected="ListBoxItem_Selected_1">Juice</ListBoxItem>
             <ListBoxItem>Whey Protein</ListBoxItem>
             <ListBoxItem>Meat</ListBoxItem>
             <ListBoxItem>Chicken</ListBoxItem>
             <ListBoxItem>Lamb</ListBoxItem>
             <ListBoxItem>Sauce</ListBoxItem>
         </ListBox>
-
-
-
-
         <Button Margin="11,358,28,34" x:Name="addCart" Click="AddCart_Click" Content="Add Item To cart" Grid.Column="1"/>
-
-
         <Label Content="Cart" Grid.Column="2" FontWeight="Bold" FontSize="40" HorizontalAlignment="Left" Margin="72,31,0,-31" Width="90"/>
-        <ListView x:Name="lvCartItems" ItemsSource="{Binding LvCartItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Grid.Column="2" Margin="69,92,192,92">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding LvCartItems}" />
-                    <!--fix binding to list view items and refresh list -->
-                </DataTemplate>
-            </ListView.ItemTemplate>
+        <ListView x:Name="lvCartItems" Grid.Column="2" Margin="69,92,192,92">
+            <ListView.View>
+                <GridView>
+                    <!-- Show the content of every segment -->
+                    <GridViewColumn Header="Product" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding Name}" Foreground="Navy"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <!-- Show the type of every segments -->
+                    <GridViewColumn Header="Price" Width="120">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding Price}" Foreground="Navy"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
         </ListView>
         <!--Button to delete the selected product from the cart-->
         <Button Grid.Column="2" x:Name="Delete" Content="Remove From Cart" Margin="87,370,174,46" Click="Delete_Click" />
@@ -53,7 +60,6 @@
             <!--Panel where user can select their payment method-->
             <Label Content="Payment Method" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
             <Label Content="Select the bill you are going to pay with if you are paying cash:" Margin="5"/>
-            <Button Content="Pay with cash" Click="payCash_Click"/>
             <ComboBox x:Name="comboBox" SelectedIndex="0" Margin="5">
                 <ComboBoxItem Content="$5"/>
                 <ComboBoxItem Content="$10"/>
@@ -61,6 +67,7 @@
                 <ComboBoxItem Content="$50"/>
                 <ComboBoxItem Content="$100"/>
             </ComboBox>
+            <Button Content="Pay with cash" Click="payCash_Click"/>
             <Button Content="Pay with credit card" Click="payDebit_Click" Margin="5"/>
             <Label Content="Note: You need to have at least 5$ worth of items in your cart" Margin="5"/>
         </StackPanel>
