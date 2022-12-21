@@ -44,7 +44,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <Button Grid.Column="1" x:Name="Delete" Content="Remove From Cart" Margin="163,358,149,34" Click="Delete_Click" />
-        <StackPanel Grid.Column="1" VerticalAlignment="Top" Height="182" Margin="334,94,10,0">
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" Height="200" Margin="334,94,10,0">
             <Button Content="Pay with cash" Click="payCash_Click"/>
             <Label Content="Select the bill you are going to pay with:" Margin="5"/>
             <ComboBox x:Name="comboBox" SelectedIndex="0" Margin="5">
