@@ -55,7 +55,7 @@ namespace FinalProject_Alejandro_Aymeric
             if (lbItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to add to the cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
-                cart.Add(products[lbItems.SelectedIndex]);
+                lvCartItems.Items.Add(lbItems.SelectedIndex);
                 products[lbItems.SelectedIndex].Quantity -= 1;
             }
         }
