@@ -12,7 +12,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="VendingMachine.xaml">
+    <Page Update="mainwindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Receipt.xaml">

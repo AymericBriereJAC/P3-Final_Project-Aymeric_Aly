@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject_Alejandro_Aymeric"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="403*" />
@@ -39,7 +40,7 @@
         <ListView x:Name="lvCartItems" ItemsSource="{Binding LbItems}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionMode="Single" Grid.Column="1" Margin="163,92,163,92">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding LvCartItems.Text}" />
+                    <TextBlock Text="{Binding LvCartItems.Text}" /> <!--fix binding to list view items and refresh list -->
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

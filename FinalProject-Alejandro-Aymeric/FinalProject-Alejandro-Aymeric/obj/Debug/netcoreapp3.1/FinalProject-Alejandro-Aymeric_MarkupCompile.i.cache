@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\App.xaml
-2-1697692659
+2-1908759358
 
-8-1317212542
+8311166807
 192-1533232326
-Receipt.xaml;VendingMachine.xaml;
+mainwindow.xaml;Receipt.xaml;
 
-True
+False
 

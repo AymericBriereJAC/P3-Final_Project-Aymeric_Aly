@@ -57,6 +57,7 @@ namespace FinalProject_Alejandro_Aymeric
             {
                 lvCartItems.Items.Add(lbItems.SelectedIndex);
                 products[lbItems.SelectedIndex].Quantity -= 1;
+                lvCartItems.Items.Refresh();
             }
         }
 
