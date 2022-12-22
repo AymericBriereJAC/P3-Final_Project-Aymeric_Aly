@@ -148,6 +148,9 @@ namespace FinalProject_Alejandro_Aymeric
             }
         }
 
-       
+        private void lvItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
