@@ -1,4 +1,4 @@
-Apple, 2, 5, /Images/apple.jpg
+Apple, 2, 5, /Images/Pomme-HoneyCrisp.png
 Cereal, 5, 32, /Images/cereal.png
 Cheese, 8, 10, /Images/cheese.png
 Chives, 3, 15, /Images/chives.jpg

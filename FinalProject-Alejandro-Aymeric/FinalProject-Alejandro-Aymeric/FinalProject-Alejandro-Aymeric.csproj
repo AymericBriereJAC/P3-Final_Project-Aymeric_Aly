@@ -19,6 +19,7 @@
     <None Remove="Images\juice.png" />
     <None Remove="Images\milk.png" />
     <None Remove="Images\pear.png" />
+    <None Remove="Images\Pomme-HoneyCrisp.png" />
     <None Remove="Images\ShoppingCart.png" />
     <None Remove="Images\whey.png" />
   </ItemGroup>
@@ -55,6 +56,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\pear.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Pomme-HoneyCrisp.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\ShoppingCart.png">
