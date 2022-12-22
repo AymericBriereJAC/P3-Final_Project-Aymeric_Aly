@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject_Alejandro_Aymeric"
         mc:Ignorable="d"
-        Title="ReceiptWindow" Height="450" Width="800">
-    <Grid>
-        <TextBlock x:Name="tbReceipt" />
-    </Grid>
+        Title="ReceiptWindow" SizeToContent="WidthAndHeight">
+    <StackPanel>
+        <TextBlock x:Name="tbReceipt" Margin="12"/>
+        <Button Content="OK" Margin="10" Click="btnOk_Click"/>
+    </StackPanel>
 </Window>
 

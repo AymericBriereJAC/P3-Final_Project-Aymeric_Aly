@@ -45,9 +45,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
-
-
-
         <Label Content="Add to cart" Grid.Column="1" Margin="0,621,0,185" FontWeight="Bold" HorizontalAlignment="Center" FontSize="15"/>
         <Button Margin="363,660,363,98" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
             <Button.ContentTemplate>
@@ -83,19 +80,14 @@
             </ListView.View>
         </ListView>
         <!--Button to delete the selected product from the cart-->
-        <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" Margin="41,363,283,420" Click="btnDelete_Click"/>
+        <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" 
+                Margin="41,363,283,420" Click="btnDelete_Click"/>
+        
         <StackPanel Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="18,445,109,0">
             <!--Panel where user can select their payment method-->
             <Label Content="Payment Method" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
             <Label Content="Select the bill you are going to pay with if you are paying cash:" Margin="5"/>
-            <Button Content="Pay with cash" Click="payCash_Click" Width="341"/>
-            <ComboBox x:Name="comboBox" SelectedIndex="0" Margin="5">
-                <ComboBoxItem Content="$5"/>
-                <ComboBoxItem Content="$10"/>
-                <ComboBoxItem Content="$20"/>
-                <ComboBoxItem Content="$50"/>
-                <ComboBoxItem Content="$100"/>
-            </ComboBox>
+            <Button Content="Pay with cash" Click="payCash_Click" Width="341" Margin="5"/>
             <Button Content="Pay with credit card" Click="payDebit_Click" Margin="5"/>
             <Label Content="Note: You need to have at least 5$ worth of items in your cart" Margin="5"/>
         </StackPanel>
