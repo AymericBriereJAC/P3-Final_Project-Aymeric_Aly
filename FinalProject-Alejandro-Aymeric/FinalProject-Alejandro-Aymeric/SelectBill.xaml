@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject_Alejandro_Aymeric"
         mc:Ignorable="d"
-        Title="SelectBill" Height="325" Width="400">
+        Title="SelectBill" Height="325" Width="400"
+        WindowStyle="None"
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen"
+        >
     <StackPanel>
         <Label x:Name="lblTotal"/>
         <Label Content="Select the bill you are going to pay with:" Margin="5"/>
-        <ListBox x:Name="lbBills" Grid.Column="1" Margin="5" Background="Tan" 
+        <ListBox x:Name="lbBills" Grid.Column="1" Margin="5" Background="LightSlateGray" 
                  BorderBrush="Black" BorderThickness="2">
             <!-- Show the content of every segment -->
             <ListBox.ItemTemplate>
