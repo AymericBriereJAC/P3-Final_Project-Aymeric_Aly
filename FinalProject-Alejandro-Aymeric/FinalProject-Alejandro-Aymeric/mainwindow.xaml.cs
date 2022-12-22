@@ -24,12 +24,11 @@ namespace FinalProject_Alejandro_Aymeric
     public partial class MainWindow : Window
     {
         private List<Product> products = new List<Product>();
-<<<<<<< Updated upstream
-=======
+
         private List<Product> cart = new List<Product>();
         private List<int> BillAmounts = new List<int>() { 5, 10, 20, 50, 100 };
-   
->>>>>>> Stashed changes
+       
+
         public MainWindow()
         {
             InitializeComponent();
@@ -54,7 +53,7 @@ namespace FinalProject_Alejandro_Aymeric
                         while((line = reader.ReadLine()) != null)
                         {
                             string[] itemOptions = line.Split(',');
-                            toAdd.Add(new Product(itemOptions[0], Convert.ToDecimal(itemOptions[1]), Convert.ToInt32(itemOptions[2])));
+                            toAdd.Add(new Product(itemOptions[0], Convert.ToDecimal(itemOptions[1]), Convert.ToInt32(itemOptions[2]), itemOptions[3]));
                         }
                     }
                 }

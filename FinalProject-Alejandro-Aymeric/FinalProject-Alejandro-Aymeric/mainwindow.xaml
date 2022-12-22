@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <!--List box element that shows the products and their names prices to be added-->
         <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Left" FontSize="30" Margin="117,42,0,42" Width="136" Grid.Column="1"/>
-        <ListView Margin="10,118,475,201" Grid.Column="0" x:Name="lvItems" SelectionMode="Single" Grid.ColumnSpan="3">
+        <ListView Margin="10,118,475,201" Grid.Column="0" x:Name="lvItems" SelectionMode="Single" Grid.ColumnSpan="3" Background="Tan">
             <ListView.View>
                 <GridView>
                     <!-- Define the columns for the grid view -->

@@ -64,3 +64,5 @@ C:\P3-Project\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalP
 C:\P3-Project\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\FinalProject-Alejandro-Aymeric.genruntimeconfig.cache
 C:\P3-Project\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\SelectBill.g.cs
 C:\P3-Project\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\SelectBill.baml
+C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\SelectBill.g.cs
+C:\Users\alyca\source\repos\P3-Final_Project-Aymeric_Aly\FinalProject-Alejandro-Aymeric\FinalProject-Alejandro-Aymeric\obj\Debug\netcoreapp3.1\SelectBill.baml

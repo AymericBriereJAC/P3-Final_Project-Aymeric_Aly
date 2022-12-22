@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Web;
 
 namespace FinalProject_Alejandro_Aymeric.Items
 {
@@ -8,11 +9,13 @@ namespace FinalProject_Alejandro_Aymeric.Items
         protected string _name = "";
         protected decimal _price = 2;
         protected int _quantity = 5;
-        public Product(string name_, decimal price_, int quantity_)
+        protected string _imagePath = "";
+        public Product(string name_, decimal price_, int quantity_,string imagePath_)
         {
             Name = name_;
             Price = price_;
             Quantity = quantity_;
+            ImagePath = imagePath_;
         }
 
         public string Name 
@@ -45,6 +48,17 @@ namespace FinalProject_Alejandro_Aymeric.Items
                 if (value < 0) throw new ArgumentOutOfRangeException("Quantity need to be positive");
 
                 _quantity = value;
+            }
+        }
+
+        public string ImagePath
+        {
+            get { return _imagePath; }
+            protected set
+            {
+                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Image path cannot be blank");
+
+                _imagePath = value;
             }
         }
     }
