@@ -2,6 +2,7 @@ using FinalProject_Alejandro_Aymeric.Items;
 using FinalProject_Alejandro_Aymeric.VendingMachineOperation;
 using System;
 using System.Collections.Generic;
+using System.DirectoryServices.ActiveDirectory;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -147,6 +148,9 @@ namespace FinalProject_Alejandro_Aymeric
             }
         }
 
-       
+        private void lvItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
