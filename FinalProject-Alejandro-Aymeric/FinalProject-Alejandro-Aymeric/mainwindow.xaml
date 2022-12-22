@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <!--List box element that shows the products and their names prices to be added-->
         <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Left" FontSize="30" Margin="117,42,0,42" Width="136" Grid.Column="1"/>
-        <ListView Margin="10,92,10,185" Grid.Column="0" x:Name="lvItems" SelectionMode="Single" Grid.ColumnSpan="2" Background="Tan" FontSize="25" FontStyle="Italic" BorderBrush="Black" BorderThickness="2,2">
+        <ListView Margin="10,118,475,201" Grid.Column="0" x:Name="lvItems" SelectionMode="Single" Grid.ColumnSpan="3">
             <ListView.View>
                 <GridView>
                     <!-- Define the columns for the grid view -->
@@ -24,7 +24,10 @@
                         <!-- Define the data template for the column -->
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Name}" Margin="5" />
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding ImagePath}" Width="50" Height="50"/>
+                                    <TextBlock Text="{Binding Name}" Margin="5" />
+                                </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -48,8 +51,8 @@
 
 
 
-        <Label Content="Add to cart" Grid.Column="1" Margin="0,660,0,146" FontWeight="Bold" HorizontalAlignment="Center" FontSize="15"/>
-        <Button Margin="363,716,363,42" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
+        <Label Content="Add to cart" Grid.Column="1" Margin="412,664,0,142" FontWeight="Bold" HorizontalAlignment="Left" FontSize="15"/>
+        <Button Margin="362,730,362,28" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
             <Button.ContentTemplate>
                 <DataTemplate>
                     <Image Source="/Images/ShoppingCart.png"/>

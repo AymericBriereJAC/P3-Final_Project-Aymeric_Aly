@@ -1,13 +1,13 @@
-Apple, 2, 5
-Cereal, 5, 32
-Cheese, 8, 10
-Chives, 3, 15
-Juice, 6, 25
-Milk, 5, 10
-Pear, 3, 20
-Whey Protein, 10, 34
-Chocoate Bar, 2.50, 50
-Cookie, 3.00, 42
-Gatorade, 3.50, 20
-Candy, 2.50, 20
+Apple, 2, 5, /Images/apple.jpg
+Cereal, 5, 32, /Images/cereal.png
+Cheese, 8, 10, /Images/cheese.png
+Chives, 3, 15, /Images/chives.jpg
+Juice, 6, 25, /Images/juice.png
+Milk, 5, 10, /Images/milk.png
+Pear, 3, 20, /Images/pear.png
+Whey Protein, 10, 34, /Images/pear.png
+Chocoate Bar, 2.50, 50, /Images/chocolate.png
+Cookie, 3.00, 42, /Images/cookie
+Gatorade, 3.50, 20, /Images/gatorade.png
+Candy, 2.50, 20, /Images/candy.png
 Red Bull, 3, 45

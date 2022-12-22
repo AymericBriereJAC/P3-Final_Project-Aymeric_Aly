@@ -24,6 +24,12 @@ namespace FinalProject_Alejandro_Aymeric
     public partial class MainWindow : Window
     {
         private List<Product> products = new List<Product>();
+<<<<<<< Updated upstream
+=======
+        private List<Product> cart = new List<Product>();
+        private List<int> BillAmounts = new List<int>() { 5, 10, 20, 50, 100 };
+   
+>>>>>>> Stashed changes
         public MainWindow()
         {
             InitializeComponent();
@@ -33,6 +39,7 @@ namespace FinalProject_Alejandro_Aymeric
             //Set the Cart listview source to the cart array
             lvCartItems.ItemsSource = Cart.CartContent;
             lvItems.ItemsSource = products;
+           
         }
         private void AddProducts(string file, List<Product> toAdd)
         {
@@ -110,5 +117,7 @@ namespace FinalProject_Alejandro_Aymeric
                 lvItems.Items.Refresh();
             }
         }
+
+        
     }
 }
