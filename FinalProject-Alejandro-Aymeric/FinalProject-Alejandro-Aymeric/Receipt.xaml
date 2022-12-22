@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="ReceiptWindow" SizeToContent="WidthAndHeight">
     <StackPanel>
+        <!-- Contain all the text related to the receipt is populated in the code -->
         <TextBlock x:Name="tbReceipt" Margin="12"/>
         <StackPanel  Background="#FFECECEC">
+            <!-- Import or close the receipt -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Content="Export" Margin="5" Padding="10,5" Click="btnExport_Click" Background="#FFE2E1E1"/>
                 <Button Content="OK" Margin="5" Padding="10,5" Click="btnOk_Click" Background="#FFE2E1E1"/>

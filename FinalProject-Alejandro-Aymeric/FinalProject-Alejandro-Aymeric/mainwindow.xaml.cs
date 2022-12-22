@@ -1,6 +1,7 @@
 using FinalProject_Alejandro_Aymeric.Items;
 using FinalProject_Alejandro_Aymeric.VendingMachineOperation;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.DirectoryServices.ActiveDirectory;
 using System.IO;
@@ -16,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace FinalProject_Alejandro_Aymeric
 {
@@ -39,6 +41,7 @@ namespace FinalProject_Alejandro_Aymeric
             lvCartItems.ItemsSource = Cart.CartContent;
             lvItems.ItemsSource = products;
             lblMinDebitNote.Content = $"Note: You need to have at least {MIN_DEBIT}$ worth of items in your cart";  //a way to not hardcode the minimum amount to pay with debit in the app
+            lblTotal.Content = $"Your total is: {Cart.Total}$"; //set the total label to the current total
         }
 
         /// <summary>
@@ -85,8 +88,8 @@ namespace FinalProject_Alejandro_Aymeric
         /// <param name="e"></param>
         private void AddCart_Click(object sender, RoutedEventArgs e)
         {
-            if (lvItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to add to the cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
-            else if (products[lvItems.SelectedIndex].Quantity <= 0)
+            if (lvItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to add to the cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);  //no item selected
+            else if (products[lvItems.SelectedIndex].Quantity <= 0) //item not in stock
             {
                 MessageBox.Show($"No {products[lvItems.SelectedIndex].Name} left!", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
                 products.RemoveAt(lvItems.SelectedIndex);
@@ -97,9 +100,17 @@ namespace FinalProject_Alejandro_Aymeric
 
                 Cart.CartContent.Add(products[lvItems.SelectedIndex]);
                 products[lvItems.SelectedIndex].Quantity -= 1;
+
+                //Check if the item is stil in stock if not remove it from the user view
+                if (products[lvItems.SelectedIndex].Quantity <= 0)
+                {
+                    products.RemoveAt(lvItems.SelectedIndex);
+                    lvItems.SelectedIndex = -1;
+                }
+
+                lblTotal.Content = $"Your total is: {Cart.Total}$"; //set the total label to the current total
                 lvCartItems.Items.Refresh();
                 lvItems.Items.Refresh();
-                
             }
         }
 
@@ -158,14 +169,17 @@ namespace FinalProject_Alejandro_Aymeric
         /// <param name="e"></param>
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            if(lvCartItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to remove from your cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error); //no item selected
+            if (lvCartItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to remove from your cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error); //no item selected
             else
             {
                 Cart.CartContent[lvCartItems.SelectedIndex].Quantity += 1;
+
+                if (Cart.CartContent[lvCartItems.SelectedIndex].Quantity == 1) products.Insert(0, Cart.CartContent[lvCartItems.SelectedIndex]); //product just got back in stock, add it back to the product list
+
                 Cart.CartContent.RemoveAt(lvCartItems.SelectedIndex);
                 lvCartItems.Items.Refresh();
                 lvItems.Items.Refresh();
-                
+                lblTotal.Content = $"Your total is: {Cart.Total}$"; //set the total label to the current total
             }
         }
     }

@@ -4,6 +4,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,28 +22,12 @@ namespace FinalProject_Alejandro_Aymeric
     /// </summary>
     public partial class ReceiptWindow : Window
     {
-        public string receiptText = "Thank you for your purchase!\n\n";
         public ReceiptWindow(List<Product> products, string paymentMethod, decimal choosenBill = -1)
         {
             InitializeComponent();
 
-            // Set the receipt text 
-            receiptText += "Items:\n";
-            int currentItemQuantity = 0;
-            foreach (Product item in products)
-            {
-                currentItemQuantity = Cart.GetItemQuantity(item.Name);
-
-                if(currentItemQuantity > 0)
-                    receiptText += $"{item.Name} x{currentItemQuantity} @ ${item.Price:F2} each = ${item.Price * currentItemQuantity:F2}\n";
-            }
-            receiptText += $"\nTotal: ${Cart.Total:F2}\n";
-            receiptText += $"Payment Method: {paymentMethod}\n";
-            if (paymentMethod == "Cash") receiptText += $"Your change is ${choosenBill - Cart.Total}";
-
-            tbReceipt.Text = receiptText;
+            tbReceipt.Text = Cart.GenerateReceipt(paymentMethod, choosenBill);
         }
-
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
             Close();
