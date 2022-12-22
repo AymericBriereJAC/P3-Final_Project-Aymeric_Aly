@@ -77,7 +77,7 @@ namespace FinalProject_Alejandro_Aymeric {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FinalProject-Alejandro-Aymeric;V1.0.0.0;component/selectbill.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FinalProject-Alejandro-Aymeric;component/selectbill.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SelectBill.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

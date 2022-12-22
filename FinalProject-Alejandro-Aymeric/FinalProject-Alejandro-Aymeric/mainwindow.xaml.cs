@@ -163,26 +163,7 @@ namespace FinalProject_Alejandro_Aymeric
             
             for(int i= 0; i < lvCartItems.Items.Count; i++)
             {
-                if (Cart.CartContent[i].Quantity >= 1)
-                {
-                    for(int y=0; y < products.Count; y++)
-                    {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                        if(Cart.CartContent[i] is products[y]   )
-=======
-                        if(Cart.CartContent[i] is products[y])
->>>>>>> Stashed changes
-=======
-                        if(Cart.CartContent[i] is products[y])
->>>>>>> Stashed changes
-=======
-                        if(Cart.CartContent[i] is products[y])
->>>>>>> Stashed changes
-                    }
-                    Cart.CartContent[i].Quantity += 1;
-                }
+                
             }
             Cart.CartContent.Clear();
             
