@@ -1,11 +1,12 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using System.Web;
 using System.Windows.Media.Imaging;
 
 namespace FinalProject_Alejandro_Aymeric.Items
 {
-    public class Product
+    public class Product : INotifyPropertyChanged
     {
         protected string _name = "";
         protected decimal _price = 2;
@@ -49,6 +50,7 @@ namespace FinalProject_Alejandro_Aymeric.Items
                 if (value < 0) throw new ArgumentOutOfRangeException("Quantity need to be positive");
 
                 _quantity = value;
+                OnPropertyChanged("Quantity");
             }
         }
 
@@ -63,6 +65,12 @@ namespace FinalProject_Alejandro_Aymeric.Items
 
                 return bitmapImage;
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

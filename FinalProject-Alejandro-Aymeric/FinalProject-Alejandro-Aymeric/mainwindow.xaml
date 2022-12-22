@@ -16,18 +16,22 @@
         </Grid.ColumnDefinitions>
         <!--List box element that shows the products and their names prices to be added-->
         <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Left" FontSize="30" Margin="117,42,0,42" Width="136" Grid.Column="1"/>
-        <ListView Margin="10,118,475,201" Grid.Column="0" x:Name="lvItems" SelectionMode="Single" Grid.ColumnSpan="3" Background="Tan" RenderTransformOrigin="1,1">
+        <ListView Margin="10,118,475,201" Grid.Column="0" x:Name="lvItems" SelectionMode="Single" Grid.ColumnSpan="3" Background="Tan">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3" />
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="BorderThickness" Value="0.5" />
-                    <Setter Property="BorderBrush" Value="Black" />
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Opacity" Value="1" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Quantity}" Value="0">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </DataTrigger>
+                    </Style.Triggers>
                 </Style>
-            </ListView.ItemContainerStyle>
+            </ListBox.Resources>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>

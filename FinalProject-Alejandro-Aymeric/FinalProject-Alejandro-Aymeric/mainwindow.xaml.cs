@@ -25,9 +25,6 @@ namespace FinalProject_Alejandro_Aymeric
     {
         private List<Product> products = new List<Product>();
 
-        private List<Product> cart = new List<Product>();
-        private List<int> BillAmounts = new List<int>() { 5, 10, 20, 50, 100 };
-
         public MainWindow()
         {
             InitializeComponent();
@@ -69,6 +66,7 @@ namespace FinalProject_Alejandro_Aymeric
         private void AddCart_Click(object sender, RoutedEventArgs e)
         {
             if (lvItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to add to the cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
+            else if (products[lvItems.SelectedIndex].Quantity <= 0) MessageBox.Show($"No {products[lvItems.SelectedIndex].Name} left!", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
                 Cart.CartContent.Add(products[lvItems.SelectedIndex]);
