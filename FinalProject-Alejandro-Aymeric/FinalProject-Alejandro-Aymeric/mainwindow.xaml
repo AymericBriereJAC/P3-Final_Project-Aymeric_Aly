@@ -15,20 +15,23 @@
 
         </Grid.ColumnDefinitions>
         <!--List box element that shows the products and their names prices to be added-->
-        <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Margin="0,56,0,28" Width="136" Grid.Column="1"/>
-        <ListView Margin="10,118,475,201" Grid.Column="0" x:Name="lvItems" SelectionMode="Single" Grid.ColumnSpan="3" Background="Tan" RenderTransformOrigin="1,1">
+        <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Left" FontSize="30" Margin="117,42,0,42" Width="136" Grid.Column="1"/>
+        <ListView Margin="10,118,475,201" Grid.Column="0" x:Name="lvItems" SelectionMode="Single" Grid.ColumnSpan="3" Background="Tan">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3" />
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
-            <ListView.ItemContainerStyle>
-                <!--Setting a border for the list view-->
-                <Style TargetType="ListViewItem">
-                    <Setter Property="BorderThickness" Value="0.5" />
-                    <Setter Property="BorderBrush" Value="Black" />
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Opacity" Value="1" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Quantity}" Value="0">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </DataTrigger>
+                    </Style.Triggers>
                 </Style>
-            </ListView.ItemContainerStyle>
+            </ListBox.Resources>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -58,9 +61,9 @@
         </ListView>
 
 
-        <!--Button to add the selected item to the cart-->
-        <Label Content="Add to cart" Grid.Column="1" Margin="412,660,0,146" FontWeight="Bold" HorizontalAlignment="Left" FontSize="15"/>
-        <Button Margin="362,730,362,28" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
+
+        <Label Content="Add to cart" Grid.Column="1" Margin="0,654,0,152" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20" RenderTransformOrigin="-0.061,1.423"/>
+        <Button Margin="100,716,120,42" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
             <Button.ContentTemplate>
                 <DataTemplate>
                     <Image Source="/Images/ShoppingCart.png"/>
@@ -78,7 +81,7 @@
 
         <!--List that contains all of the items that were added to the cart-->
         <Label Content="Cart" Grid.Column="2" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" Margin="0,31,0,-31" Width="90"/>
-        <ListView x:Name="lvCartItems" Grid.Column="2" Margin="110,117,110,461" Background="Tan" BorderBrush="Black" BorderThickness="2">
+        <ListView x:Name="lvCartItems" Grid.Column="2" Margin="87,101,87,331" Background="Tan" BorderBrush="Black" BorderThickness="2">
             <ListView.View>
                 <GridView>
                     <!-- Show the content of every product -->
@@ -102,9 +105,9 @@
         </ListView>
         <!--Button to delete the selected product from the cart-->
         <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" 
-                Margin="162,394,162,389" Click="btnDelete_Click"/>
+                Margin="162,542,162,241" Click="btnDelete_Click"/>
 
-        <StackPanel Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="64,487,64,0">
+        <StackPanel Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="64,604,64,0">
             <!--Panel where user can select their payment method-->
             <Label Content="Payment Method" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
             <Label Content="Select the bill you are going to pay with if you are paying cash:" Margin="5"/>

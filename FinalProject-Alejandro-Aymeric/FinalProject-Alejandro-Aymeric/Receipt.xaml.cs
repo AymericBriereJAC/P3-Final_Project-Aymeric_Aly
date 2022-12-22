@@ -1,7 +1,9 @@
 ﻿using FinalProject_Alejandro_Aymeric.Items;
 using FinalProject_Alejandro_Aymeric.VendingMachineOperation;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,12 +21,12 @@ namespace FinalProject_Alejandro_Aymeric
     /// </summary>
     public partial class ReceiptWindow : Window
     {
+        public string receiptText = "Thank you for your purchase!\n\n";
         public ReceiptWindow(List<Product> products, string paymentMethod, decimal choosenBill = -1)
         {
             InitializeComponent();
 
-            // Set the receipt text
-            string receiptText = "Thank you for your purchase!\n\n";    //converting to stringbuilder would be more efficient
+            // Set the receipt text 
             receiptText += "Items:\n";
             int currentItemQuantity = 0;
             foreach (Product item in products)
@@ -44,6 +46,26 @@ namespace FinalProject_Alejandro_Aymeric
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+        private void btnExport_Click(object sender, RoutedEventArgs e)
+        {
+            string saveLocation = "";
+            try
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Text File | *.txt"; // | All Files | *.*";
+                saveFileDialog.AddExtension = false;
+                saveFileDialog.DefaultExt = "";
+                if (saveFileDialog.ShowDialog() == true)
+                    saveLocation = saveFileDialog.FileName; //had a trouble where i got double extension (.html.html) it is an easy way i found to fix it
+
+                File.WriteAllText(saveLocation, receiptText);
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "An error occured", MessageBoxButton.OK, MessageBoxImage.Error); //an error occured, show the appropriate error message
+            }
         }
     }
 }
