@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject_Alejandro_Aymeric"
         mc:Ignorable="d"
-        Title="Vending Machine" Height="650" Width="1450"
+        Title="Vending Machine" Height="750" Width="1450"
         ResizeMode="NoResize">
     <Grid Margin="0,0,10,-6">
         <Grid.ColumnDefinitions>
@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <!--List box element that shows the products and their names prices to be added-->
         <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Left" FontSize="30" Margin="388,16,0,67" Width="137" Grid.Column="1"/>
-        <ListView Margin="10,71,475,163" Grid.Column="0" x:Name="lvItems" SelectionMode="Single" Grid.ColumnSpan="3" Background="Tan">
+        <ListView Margin="10,71,475,163" Grid.Column="0" x:Name="lvItems" SelectionMode="Single" Grid.ColumnSpan="3" Background="Tan" BorderBrush="Black" BorderThickness="3">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3" />
@@ -60,7 +60,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Content="Add to Cart" FontSize="35" FontWeight="Bold" x:Name="addCart" Click="AddCart_Click" BorderBrush="Black" BorderThickness="2,2" Margin="15,688,25,42" Grid.ColumnSpan="2"/>
+        <Button Content="Add to Cart" FontSize="35" FontWeight="Bold" x:Name="addCart" Click="AddCart_Click" BorderBrush="Black" BorderThickness="2,2" Margin="4,596,4,19" Grid.Column="1"/>
 
 
 
@@ -70,7 +70,7 @@
 
 
         <!--List that contains all of the items that were added to the cart-->
-        <Label Content="Cart" Grid.Column="2" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" Margin="0,5,0,-5" Width="90"/>
+        <Label Content="Cart" Grid.Column="2" FontWeight="Bold" FontSize="40" HorizontalAlignment="Left" Margin="204,0,0,0" Width="90"/>
         <ListView x:Name="lvCartItems" Grid.Column="2" Margin="10,71,10,265" Background="Tan" BorderBrush="Black" BorderThickness="2">
             <ListView.View>
                 <GridView>
@@ -95,15 +95,15 @@
         </ListView>
         <!--Button to delete the selected product from the cart-->
         <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" 
-                Margin="162,528,162,254" Click="btnDelete_Click"/>
+                Margin="167,478,144,224" Click="btnDelete_Click"/>
 
-        <GroupBox Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="64,604,64,0">
-            <StackPanel Height="237" >
+        <GroupBox Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="10,516,10,0" Background="White" BorderBrush="Black" BorderThickness="2" Header="Payment Method" FontSize="15" FontWeight="DemiBold" >
+            <StackPanel Height="232" Margin="0,0,-11,0" >
                 <!--Panel where user can select their payment method-->
-                <Label Content="Payment Method" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+               
                 <Label Content="Select the bill you are going to pay with if you are paying cash:" Margin="5"/>
                 <Button Content="Pay with cash" Click="payCash_Click" Width="341" Margin="5"/>
-                <Button Content="Pay with credit card" Click="payDebit_Click" Margin="5"/>
+                <Button Content="Pay with credit card" Click="payDebit_Click" Margin="5" Width="341"/>
                 <Label Content="Note: You need to have at least 5$ worth of items in your cart" Margin="5"/>
             </StackPanel>
         </GroupBox>
