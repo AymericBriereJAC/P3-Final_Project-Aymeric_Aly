@@ -27,7 +27,6 @@ namespace FinalProject_Alejandro_Aymeric
 
         private List<Product> cart = new List<Product>();
         private List<int> BillAmounts = new List<int>() { 5, 10, 20, 50, 100 };
-       
 
         public MainWindow()
         {

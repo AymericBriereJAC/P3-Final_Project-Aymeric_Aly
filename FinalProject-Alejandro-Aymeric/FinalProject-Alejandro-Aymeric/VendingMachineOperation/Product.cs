@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Web;
+using System.Windows.Media.Imaging;
 
 namespace FinalProject_Alejandro_Aymeric.Items
 {
@@ -15,7 +16,7 @@ namespace FinalProject_Alejandro_Aymeric.Items
             Name = name_;
             Price = price_;
             Quantity = quantity_;
-            ImagePath = imagePath_;
+            _imagePath = imagePath_;
         }
 
         public string Name 
@@ -51,14 +52,16 @@ namespace FinalProject_Alejandro_Aymeric.Items
             }
         }
 
-        public string ImagePath
+        public BitmapImage ImagePath
         {
-            get { return _imagePath; }
-            protected set
+            get 
             {
-                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Image path cannot be blank");
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.UriSource = new Uri(_imagePath, UriKind.Relative);
+                bitmapImage.EndInit();
 
-                _imagePath = value;
+                return bitmapImage;
             }
         }
     }
