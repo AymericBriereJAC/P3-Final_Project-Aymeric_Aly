@@ -169,7 +169,11 @@ namespace FinalProject_Alejandro_Aymeric
                     {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                         if(Cart.CartContent[i] is products[y]   )
+=======
+                        if(Cart.CartContent[i] is products[y])
+>>>>>>> Stashed changes
 =======
                         if(Cart.CartContent[i] is products[y])
 >>>>>>> Stashed changes

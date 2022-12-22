@@ -1,6 +1,10 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ﻿#pragma checksum "..\..\..\mainwindow.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "E8C00A90BDEA00A93BA9B31DC5E4C55E34E1F290"
+=======
+﻿#pragma checksum "..\..\..\mainwindow.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "95392A22284B3CDEEB6627D1CBC029FA3C756D3F"
+>>>>>>> Stashed changes
 =======
 ﻿#pragma checksum "..\..\..\mainwindow.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "95392A22284B3CDEEB6627D1CBC029FA3C756D3F"
 >>>>>>> Stashed changes
@@ -84,6 +88,7 @@ namespace FinalProject_Alejandro_Aymeric {
         
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         #line 106 "..\..\..\mainwindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblTotal;
@@ -95,6 +100,11 @@ namespace FinalProject_Alejandro_Aymeric {
         #line 110 "..\..\..\mainwindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblMinDebitNote;
+=======
+        #line 101 "..\..\..\mainwindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btnClearCart;
+>>>>>>> Stashed changes
 =======
         #line 101 "..\..\..\mainwindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
@@ -166,6 +176,7 @@ namespace FinalProject_Alejandro_Aymeric {
             case 5:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.lblTotal = ((System.Windows.Controls.Label)(target));
             return;
             case 6:
@@ -184,6 +195,12 @@ namespace FinalProject_Alejandro_Aymeric {
             #line 101 "..\..\..\mainwindow.xaml"
             this.btnClearCart.Click += new System.Windows.RoutedEventHandler(this.btnClearCart_Click);
 >>>>>>> Stashed changes
+=======
+            this.btnClearCart = ((System.Windows.Controls.Button)(target));
+            
+            #line 101 "..\..\..\mainwindow.xaml"
+            this.btnClearCart.Click += new System.Windows.RoutedEventHandler(this.btnClearCart_Click);
+>>>>>>> Stashed changes
             
             #line default
             #line hidden
@@ -201,6 +218,9 @@ namespace FinalProject_Alejandro_Aymeric {
             case 7:
             
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
