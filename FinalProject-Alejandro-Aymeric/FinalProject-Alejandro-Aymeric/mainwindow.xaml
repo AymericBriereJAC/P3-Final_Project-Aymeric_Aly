@@ -95,13 +95,8 @@
         <!--Button to delete the selected product from the cart-->
         <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" 
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
                 Margin="141,465,119,202" Click="btnDelete_Click" FontSize="18"
                 FontWeight="Bold"/>
-=======
-                Margin="53,458,238,221" Click="btnDelete_Click"/>
-        <Button Grid.Column="2" x:Name="btnClearCart" Content="Clear cart" Click="btnClearCart_Click" Margin="249,458,42,221"/>
->>>>>>> Stashed changes
 =======
                 Margin="53,458,238,221" Click="btnDelete_Click"/>
         <Button Grid.Column="2" x:Name="btnClearCart" Content="Clear cart" Click="btnClearCart_Click" Margin="249,458,42,221"/>
@@ -114,11 +109,7 @@
             <StackPanel Height="232" Margin="0,0,-11,0" >
                 <!--Panel where user can select their payment method-->
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
                 <Label Name="lblTotal" HorizontalAlignment="Center"/>
-=======
-
->>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
