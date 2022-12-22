@@ -81,7 +81,12 @@ namespace FinalProject_Alejandro_Aymeric
         private void AddCart_Click(object sender, RoutedEventArgs e)
         {
             if (lvItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to add to the cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
-            else if (products[lvItems.SelectedIndex].Quantity <= 0) MessageBox.Show($"No {products[lvItems.SelectedIndex].Name} left!", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
+            if (products[lvItems.SelectedIndex].Quantity <= 0)
+            {
+                MessageBox.Show($"No {products[lvItems.SelectedIndex].Name} left!", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
+                products.RemoveAt(lvItems.SelectedIndex);
+                lvItems.SelectedIndex = -1;
+            }
             else
             {
                 Cart.CartContent.Add(products[lvItems.SelectedIndex]);
