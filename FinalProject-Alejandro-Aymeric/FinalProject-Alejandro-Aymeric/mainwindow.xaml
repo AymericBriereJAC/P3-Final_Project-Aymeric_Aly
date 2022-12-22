@@ -39,6 +39,7 @@
                             <ColumnDefinition Width="100" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
+                        <!--List that contains all the items that can be added to the cart-->
                         <Image Source="{Binding ImagePath}" Width="100" Height="100" ClipToBounds="True"/>
                         <StackPanel Orientation="Vertical" Grid.Column="1" Margin="0,0,0,5" >
                             <StackPanel Orientation="Horizontal">
@@ -66,7 +67,7 @@
             <Button.ContentTemplate>
                 <DataTemplate>
                     <Image Source="/Images/ShoppingCart.png"/>
-                    <!--make image stay on button-->
+                    
                 </DataTemplate>
             </Button.ContentTemplate>
         </Button>
@@ -77,12 +78,13 @@
 
 
 
-    
+
+        <!--List that contains all of the items that were added to the cart-->
         <Label Content="Cart" Grid.Column="2" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" Margin="0,31,0,-31" Width="90"/>
         <ListView x:Name="lvCartItems" Grid.Column="2" Margin="87,101,87,331" Background="Tan" BorderBrush="Black" BorderThickness="2">
             <ListView.View>
                 <GridView>
-                    <!-- Show the content of every segment -->
+                    <!-- Show the content of every product -->
                     <GridViewColumn Header="Product" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -90,7 +92,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <!-- Show the type of every segments -->
+                    <!-- Show the price of every product-->
                     <GridViewColumn Header="Price" Width="120">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>

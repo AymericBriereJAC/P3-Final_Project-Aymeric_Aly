@@ -65,5 +65,18 @@ namespace FinalProject_Alejandro_Aymeric.Items
                 return bitmapImage;
             }
         }
+
+        public bool CheckInventory(Product prod)
+        {
+            bool isEmpty = false;
+
+            if (prod == null) throw new ArgumentNullException();
+
+            if(prod.Quantity <= 0)
+            {
+                isEmpty = true;    
+            }
+            return isEmpty;
+        }
     }
 }

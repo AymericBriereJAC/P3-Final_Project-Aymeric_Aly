@@ -1,4 +1,4 @@
-﻿using FinalProject_Alejandro_Aymeric.Items;
+using FinalProject_Alejandro_Aymeric.Items;
 using FinalProject_Alejandro_Aymeric.VendingMachineOperation;
 using System;
 using System.Collections.Generic;
@@ -24,12 +24,14 @@ namespace FinalProject_Alejandro_Aymeric
     /// </summary>
     public partial class MainWindow : Window
     {
+        // lists that will be used to store the products and the ones that go into the cart
         private List<Product> products = new List<Product>();
 
         public MainWindow()
         {
             InitializeComponent();
-
+            
+            // adding all the products from the txt file
             AddProducts("items.txt", products);
 
             //Set the Cart listview source to the cart array
@@ -37,6 +39,12 @@ namespace FinalProject_Alejandro_Aymeric
             lvItems.ItemsSource = products;
            
         }
+
+        /// <summary>
+        /// Adds each product's name, price, quantity and an image
+        /// </summary>
+        /// <param name="file"></param>
+        /// <param name="toAdd"></param>
         private void AddProducts(string file, List<Product> toAdd)
         {
             try
@@ -49,6 +57,7 @@ namespace FinalProject_Alejandro_Aymeric
                     {
                         while((line = reader.ReadLine()) != null)
                         {
+                            // splitting the line of text to extract every single property
                             string[] itemOptions = line.Split(',');
                             toAdd.Add(new Product(itemOptions[0], Convert.ToDecimal(itemOptions[1]), Convert.ToInt32(itemOptions[2]), itemOptions[3]));
                         }
@@ -64,6 +73,11 @@ namespace FinalProject_Alejandro_Aymeric
             lvItems.Items.Refresh();
         }
 
+        /// <summary>
+        /// When user clicks add to cart add the item to the cart list and refresh both of the views
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddCart_Click(object sender, RoutedEventArgs e)
         {
             if (lvItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to add to the cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -74,9 +88,16 @@ namespace FinalProject_Alejandro_Aymeric
                 products[lvItems.SelectedIndex].Quantity -= 1;
                 lvCartItems.Items.Refresh();
                 lvItems.Items.Refresh();
+                
             }
         }
 
+
+        /// <summary>
+        /// When the user decides to pay in cash they get sent to a separate window to select the value of the bill they want to pay with and then tehir receipt is calculated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void payCash_Click(object sender, RoutedEventArgs e)
         {
 
@@ -92,6 +113,12 @@ namespace FinalProject_Alejandro_Aymeric
             }
         }
 
+
+        /// <summary>
+        /// If the user decides to pay with debit/credit they are immediately sent to the receipt window where everything will be calculated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void payDebit_Click(object sender, RoutedEventArgs e)
         {
             if (Cart.Total < 5) MessageBox.Show($"You need to have at least 5$ worth of items to pay with a debit card", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -103,6 +130,11 @@ namespace FinalProject_Alejandro_Aymeric
             }
         }
 
+        /// <summary>
+        /// The button deletes the selected item from the cart
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             if(lvCartItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to remove from your cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -112,9 +144,10 @@ namespace FinalProject_Alejandro_Aymeric
                 Cart.CartContent.RemoveAt(lvCartItems.SelectedIndex);
                 lvCartItems.Items.Refresh();
                 lvItems.Items.Refresh();
+                
             }
         }
 
-        
+       
     }
 }
