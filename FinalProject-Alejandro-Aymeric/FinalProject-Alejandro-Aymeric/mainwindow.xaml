@@ -15,7 +15,7 @@
 
         </Grid.ColumnDefinitions>
         <!--List box element that shows the products and their names prices to be added-->
-        <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Left" FontSize="30" Margin="388,16,0,67" Width="137" Grid.Column="1"/>
+        <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Margin="0,16,0,178" Width="137" Grid.Column="1"/>
         <ListView Margin="10,71,475,163" Grid.Column="0" x:Name="lvItems" SelectionMode="Single" Grid.ColumnSpan="3" Background="White" BorderBrush="Black" BorderThickness="3">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -62,7 +62,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Content="Add to Cart" FontSize="35" FontWeight="Bold" x:Name="addCart" Click="AddCart_Click" BorderBrush="Black" BorderThickness="2,2" Margin="18,599,7,21" Grid.ColumnSpan="2"/>
+        <Button Content="Add to Cart" FontSize="50" FontWeight="Bold" x:Name="addCart" Click="AddCart_Click" BorderBrush="Black" BorderThickness="2,2" Margin="18,567,7,21" Grid.ColumnSpan="2"/>
 
 
 
@@ -97,12 +97,13 @@
         </ListView>
         <!--Button to delete the selected product from the cart-->
         <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" 
-                Margin="147,458,144,221" Click="btnDelete_Click"/>
+                Margin="141,465,119,202" Click="btnDelete_Click" FontSize="18"
+                FontWeight="Bold"/>
 
         <GroupBox Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="10,516,10,0" Background="White" BorderBrush="Black" BorderThickness="2" Header="Payment Method" FontSize="15" FontWeight="DemiBold" >
             <StackPanel Height="232" Margin="0,0,-11,0" >
                 <!--Panel where user can select their payment method-->
-               
+
                 <Label Content="Select the bill you are going to pay with if you are paying cash:" Margin="5"/>
                 <Button Content="Pay with cash" Click="payCash_Click" Width="341" Margin="5"/>
                 <Button Content="Pay with credit card" Click="payDebit_Click" Margin="5" Width="341"/>
