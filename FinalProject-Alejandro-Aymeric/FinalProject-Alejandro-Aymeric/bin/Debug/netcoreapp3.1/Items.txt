@@ -10,4 +10,3 @@ Chocoate Bar, 2.50, 50, /Images/chocolate.png
 Cookie, 3.00, 42, /Images/cookie
 Gatorade, 3.50, 20, /Images/gatorade.png
 Candy, 2.50, 20, /Images/candy.png
-Red Bull, 3, 45
