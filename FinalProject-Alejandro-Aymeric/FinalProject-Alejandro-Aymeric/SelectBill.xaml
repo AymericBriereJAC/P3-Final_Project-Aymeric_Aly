@@ -5,19 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject_Alejandro_Aymeric"
         mc:Ignorable="d"
-        Title="SelectBill" Height="325" Width="400">
+        Title="SelectBill" Height="355" Width="400">
     <StackPanel>
-        <Label x:Name="lblTotal"/>
-        <Label Content="Select the bill you are going to pay with:" Margin="5"/>
-        <ListBox x:Name="lbBills" Grid.Column="1" Margin="5" Background="Tan" 
-                 BorderBrush="Black" BorderThickness="2">
+        <Label x:Name="lblTotal" Content="Your total is: {Cart.Total}$" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Please select the bill(s) you would like to pay with:" Margin="5" FontSize="15"/>
+        <ListBox x:Name="lbBills" Margin="5" Background="Tan" BorderBrush="Black" BorderThickness="2" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <!-- Show the content of every segment -->
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding}" Foreground="Black" FontWeight="Bold" FontSize="15"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding}" Foreground="Black" FontWeight="Bold" FontSize="15"/>
+                        <Label Content="Enter the number of bills you want to use:" Margin="5"/>
+                        <TextBox x:Name="txtNumberOfBills" Width="75" Margin="5"/>
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Content="Pay now!" Margin="5" Click="btnPay_Click"/>
+        <Button x:Name="btnPay" Content="Proceed to Payment" Margin="5" Click="btnPay_Click" IsEnabled="False"/>
     </StackPanel>
 </Window>

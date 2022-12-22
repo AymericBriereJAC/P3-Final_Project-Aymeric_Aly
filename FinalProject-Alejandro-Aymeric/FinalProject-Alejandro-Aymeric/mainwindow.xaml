@@ -60,7 +60,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Content="Add to Cart" FontSize="35" FontWeight="Bold" x:Name="addCart" Click="AddCart_Click" BorderBrush="Black" BorderThickness="2,2" Margin="15,688,25,42" Grid.ColumnSpan="2"/>
+        <Button Content="Add to Cart" FontSize="35" FontWeight="Bold" x:Name="addCart" Click="AddCart_Click" BorderBrush="Black" BorderThickness="2,2" Margin="18,688,7,42" Grid.ColumnSpan="2"/>
 
 
 
@@ -97,7 +97,7 @@
         <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" 
                 Margin="162,528,162,254" Click="btnDelete_Click"/>
 
-        <GroupBox Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="64,604,64,0">
+        <GroupBox Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="41,611,87,0">
             <StackPanel Height="237" >
                 <!--Panel where user can select their payment method-->
                 <Label Content="Payment Method" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>

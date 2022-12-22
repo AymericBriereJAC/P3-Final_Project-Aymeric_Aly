@@ -107,9 +107,16 @@ namespace FinalProject_Alejandro_Aymeric
                 SelectBill bill = new SelectBill();
                 bill.ShowDialog();
 
-                // Show the ReceiptWindow
-                ReceiptWindow receiptWindow = new ReceiptWindow(products, "Cash", bill.ChoosenBill);
-                receiptWindow.Show();
+                if (Cart.ValidateBalance(bill.ChoosenBill))
+                {
+                    // Show the ReceiptWindow
+                    ReceiptWindow receiptWindow = new ReceiptWindow(products, "Cash", bill.ChoosenBill);
+                    receiptWindow.Show();
+                }
+                else
+                {
+                    MessageBox.Show($"You did not have enough money, Sorry!", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 
