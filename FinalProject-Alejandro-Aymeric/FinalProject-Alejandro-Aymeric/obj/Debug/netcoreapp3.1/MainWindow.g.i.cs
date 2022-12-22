@@ -50,7 +50,7 @@ namespace FinalProject_Alejandro_Aymeric {
         #line hidden
         
         
-        #line 63 "..\..\..\mainwindow.xaml"
+        #line 65 "..\..\..\mainwindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button addCart;
         
@@ -58,7 +58,7 @@ namespace FinalProject_Alejandro_Aymeric {
         #line hidden
         
         
-        #line 74 "..\..\..\mainwindow.xaml"
+        #line 76 "..\..\..\mainwindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ListView lvCartItems;
         
@@ -66,7 +66,7 @@ namespace FinalProject_Alejandro_Aymeric {
         #line hidden
         
         
-        #line 97 "..\..\..\mainwindow.xaml"
+        #line 99 "..\..\..\mainwindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnDelete;
         
@@ -109,7 +109,7 @@ namespace FinalProject_Alejandro_Aymeric {
             case 2:
             this.addCart = ((System.Windows.Controls.Button)(target));
             
-            #line 63 "..\..\..\mainwindow.xaml"
+            #line 65 "..\..\..\mainwindow.xaml"
             this.addCart.Click += new System.Windows.RoutedEventHandler(this.AddCart_Click);
             
             #line default
@@ -121,7 +121,7 @@ namespace FinalProject_Alejandro_Aymeric {
             case 4:
             this.btnDelete = ((System.Windows.Controls.Button)(target));
             
-            #line 98 "..\..\..\mainwindow.xaml"
+            #line 100 "..\..\..\mainwindow.xaml"
             this.btnDelete.Click += new System.Windows.RoutedEventHandler(this.btnDelete_Click);
             
             #line default
@@ -129,7 +129,7 @@ namespace FinalProject_Alejandro_Aymeric {
             return;
             case 5:
             
-            #line 105 "..\..\..\mainwindow.xaml"
+            #line 107 "..\..\..\mainwindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.payCash_Click);
             
             #line default
@@ -137,7 +137,7 @@ namespace FinalProject_Alejandro_Aymeric {
             return;
             case 6:
             
-            #line 106 "..\..\..\mainwindow.xaml"
+            #line 108 "..\..\..\mainwindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.payDebit_Click);
             
             #line default
