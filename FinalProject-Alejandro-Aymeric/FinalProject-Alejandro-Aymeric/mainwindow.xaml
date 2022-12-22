@@ -61,8 +61,8 @@
 
 
 
-        <Label Content="Add to cart" Grid.Column="1" Margin="412,664,0,142" FontWeight="Bold" HorizontalAlignment="Left" FontSize="15"/>
-        <Button Margin="362,730,362,28" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
+        <Label Content="Add to cart" Grid.Column="1" Margin="0,654,0,152" FontWeight="Bold" HorizontalAlignment="Center" FontSize="20" RenderTransformOrigin="-0.061,1.423"/>
+        <Button Margin="100,716,120,42" x:Name="addCart" Click="AddCart_Click" Grid.Column="1" Background="DarkTurquoise" BorderBrush="Black" BorderThickness="2,2">
             <Button.ContentTemplate>
                 <DataTemplate>
                     <Image Source="/Images/ShoppingCart.png"/>
@@ -80,7 +80,7 @@
 
 
         <Label Content="Cart" Grid.Column="2" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" Margin="0,31,0,-31" Width="90"/>
-        <ListView x:Name="lvCartItems" Grid.Column="2" Margin="110,117,110,461" Background="Tan" BorderBrush="Black" BorderThickness="2">
+        <ListView x:Name="lvCartItems" Grid.Column="2" Margin="87,101,87,331" Background="Tan" BorderBrush="Black" BorderThickness="2">
             <ListView.View>
                 <GridView>
                     <!-- Show the content of every segment -->
@@ -104,9 +104,9 @@
         </ListView>
         <!--Button to delete the selected product from the cart-->
         <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" 
-                Margin="162,394,162,389" Click="btnDelete_Click"/>
+                Margin="162,542,162,241" Click="btnDelete_Click"/>
 
-        <StackPanel Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="64,487,64,0">
+        <StackPanel Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="64,604,64,0">
             <!--Panel where user can select their payment method-->
             <Label Content="Payment Method" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
             <Label Content="Select the bill you are going to pay with if you are paying cash:" Margin="5"/>
