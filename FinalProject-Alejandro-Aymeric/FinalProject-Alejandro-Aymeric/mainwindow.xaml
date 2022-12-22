@@ -97,7 +97,7 @@
         </ListView>
         <!--Button to delete the selected product from the cart-->
         <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" 
-                Margin="167,478,144,224" Click="btnDelete_Click"/>
+                Margin="147,458,144,221" Click="btnDelete_Click"/>
 
         <GroupBox Grid.Column="2" VerticalAlignment="Top" Height="194" Margin="10,516,10,0" Background="White" BorderBrush="Black" BorderThickness="2" Header="Payment Method" FontSize="15" FontWeight="DemiBold" >
             <StackPanel Height="232" Margin="0,0,-11,0" >
