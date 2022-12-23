@@ -97,5 +97,38 @@ namespace FinalProject_Alejandro_Aymeric.VendingMachineOperation
 
             return receiptText;
         }
+
+        /// <summary>
+        /// Clear the cart and update the given product list inventory
+        /// </summary>
+        /// <param name="toUpdate">Product list with the inventory to update</param>
+        public static void ClearCart(List<Product> toUpdate)
+        {
+            bool cartItemFound = false;
+
+            for (int i = 0; i < CartContent.Count; i++)
+            {
+                for (int y = 0; y < toUpdate.Count; y++)
+                {
+                    cartItemFound = false;
+
+                    if (CartContent[i] == toUpdate[y]) //the matching product was found, update the quantity
+                    {
+                        toUpdate[y].Quantity += 1;
+                        cartItemFound = true;
+                        break;
+                    }
+                }
+
+                if (!cartItemFound)
+                {
+                    //the product was not in the product list(was out of stock) add it back in stock
+                    CartContent[i].Quantity += 1;
+                    toUpdate.Add(Cart.CartContent[i]);
+                }
+            }
+
+            CartContent.Clear();
+        }
     }
 }

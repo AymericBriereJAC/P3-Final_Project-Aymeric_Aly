@@ -29,7 +29,7 @@ namespace FinalProject_Alejandro_Aymeric
             InitializeComponent();
 
             //generate the receipt and show it to the user
-            receiptText = Cart.GenerateReceipt(products,paymentMethod, choosenBill);
+            receiptText = Cart.GenerateReceipt(products, paymentMethod, choosenBill);
             tbReceipt.Text = receiptText;
         }
 
