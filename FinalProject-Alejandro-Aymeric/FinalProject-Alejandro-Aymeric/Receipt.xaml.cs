@@ -28,13 +28,27 @@ namespace FinalProject_Alejandro_Aymeric
         {
             InitializeComponent();
 
-            receiptText = Cart.GenerateReceipt(products, paymentMethod, choosenBill);
+            //generate the receipt and show it to the user
+            receiptText = Cart.GenerateReceipt(products,paymentMethod, choosenBill);
             tbReceipt.Text = receiptText;
         }
+
+        /// <summary>
+        /// The user accepted the receipt accepted the receipt,
+        /// close the window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
+
+        /// <summary>
+        /// The user want to export his receipt. Export it to the wanted file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
             string saveLocation = "";

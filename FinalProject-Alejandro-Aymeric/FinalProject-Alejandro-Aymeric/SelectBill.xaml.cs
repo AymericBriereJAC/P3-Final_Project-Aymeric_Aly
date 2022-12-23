@@ -29,6 +29,12 @@ namespace FinalProject_Alejandro_Aymeric
             lblTotal.Content = $"Your total is: {Cart.Total}$";
         }
 
+        /// <summary>
+        /// User confirmed their bill choice, if he has the required balance
+        /// exit the window else it will show an error message
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPay_Click(object sender, RoutedEventArgs e)
         {
             if (lbBills.SelectedIndex == -1) MessageBox.Show($"Please select bill to pay with", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -39,6 +45,6 @@ namespace FinalProject_Alejandro_Aymeric
                 Close();
             }
         }
-        public decimal ChosenBill { get { return _chosenBill; } }
+        public decimal ChosenBill { get { return _chosenBill; } } //return the bill the user has chosen
     }
 }
