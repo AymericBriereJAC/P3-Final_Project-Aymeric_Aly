@@ -112,7 +112,10 @@ namespace FinalProject_Alejandro_Aymeric
                 {
                     // Show the ReceiptWindow
                     ReceiptWindow receiptWindow = new ReceiptWindow(products, "Cash", bill.ChosenBill);
-                    receiptWindow.Show();
+                    receiptWindow.ShowDialog();
+                    Cart.ClearCart(products,false);
+                    lvCartItems.Items.Refresh();
+                    lvItems.Items.Refresh();
                 }
                 else MessageBox.Show($"You do not have the required balance to pay your order", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -132,6 +135,9 @@ namespace FinalProject_Alejandro_Aymeric
             {
                 ReceiptWindow receiptWindow = new ReceiptWindow(products, "Debit Card");
                 receiptWindow.ShowDialog();
+                Cart.ClearCart(products, false);
+                lvCartItems.Items.Refresh();
+                lvItems.Items.Refresh();
             }
         }
 
@@ -160,31 +166,7 @@ namespace FinalProject_Alejandro_Aymeric
         /// <param name="e"></param>
         private void btnClearCart_Click(object sender, RoutedEventArgs e)
         {
-            bool cartItemFound = false;
-
-            for (int i = 0; i < lvCartItems.Items.Count; i++)
-            {
-                for (int y = 0; y < products.Count; y++)
-                {
-                    cartItemFound = false;
-
-                    if (Cart.CartContent[i] == products[y]) //the matching product was found, update the quantity
-                    {
-                        products[y].Quantity += 1;
-                        cartItemFound = true;
-                        break;
-                    }
-                }
-
-                if (!cartItemFound)
-                {
-                    //the product was not in the product list(was out of stock) add it back in stock
-                    Cart.CartContent[i].Quantity += 1;
-                    products.Add(Cart.CartContent[i]);
-                }
-            }
-
-            Cart.CartContent.Clear();
+            Cart.ClearCart(products);
             lvCartItems.Items.Refresh();
             lvItems.Items.Refresh();
         }
