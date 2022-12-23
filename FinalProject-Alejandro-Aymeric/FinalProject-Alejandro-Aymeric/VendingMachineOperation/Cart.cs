@@ -16,6 +16,9 @@ namespace FinalProject_Alejandro_Aymeric.VendingMachineOperation
     public static class Cart
     {
         private static List<Product> _cart = new List<Product>();   //list of the products in the cart
+        public static decimal QUARTER = 0.25M, NICKEL = 0.05M, DIME = 0.10M, FIVEBILL = 5, TENBILL = 10,
+                                TWENTYBILL = 20, FIFTYBILL = 50, HUNDREDBILL = 100, TOONIE =2, 
+                                LOONIE = 1, PENNY = 0.01M;
 
         /// <summary>
         /// Get the total of the cart
@@ -75,25 +78,73 @@ namespace FinalProject_Alejandro_Aymeric.VendingMachineOperation
         /// <param name="paymentMethod">How the user will pay (Cash or Debit)</param>
         /// <param name="choosenBill">If the user paid with cash the bill he used (optional)</param>
         /// <returns></returns>
-        public static string GenerateReceipt(List<Product> toGenerate,string paymentMethod, decimal choosenBill = -1)
+        public static string GenerateReceipt(string paymentMethod, decimal choosenBill = -1)
         {
+            List<Product> printed = new List<Product>();
+
             string receiptText = "Thank you for your purchase!\n\n";
 
             receiptText += "Items:\n";
             int currentItemQuantity = 0;
 
-            foreach (Product item in toGenerate)
+            foreach (Product item in CartContent)
             {
                 currentItemQuantity = Cart.GetItemQuantity(item.Name);
 
-                if (currentItemQuantity > 0)
+                if (currentItemQuantity > 0 && !printed.Contains(item))
+                {
                     receiptText += $"{item.Name} x{currentItemQuantity} @ ${item.Price:F2} each = ${item.Price * currentItemQuantity:F2}\n";
+                    printed.Add(item);
+                }
             }
 
             receiptText += $"\nTotal: ${Cart.Total:F2}\n";
             receiptText += $"Payment Method: {paymentMethod}\n";
 
-            if (paymentMethod == "Cash") receiptText += $"Your change is ${choosenBill - Cart.Total}";
+            if (paymentMethod == "Cash")
+            {
+                receiptText += "------------------------------------------\n";
+                decimal change = choosenBill - Cart.Total;
+                // Calculate the number of each bill and coin to give as change
+                int numHundredBills = (int)(change / HUNDREDBILL);
+                change -= numHundredBills * HUNDREDBILL;
+                int numFiftyBills = (int)(change / FIFTYBILL);
+                change -= numFiftyBills * FIFTYBILL;
+                int numTwentyBills = (int)(change / TWENTYBILL);
+                change -= numTwentyBills * TWENTYBILL;
+                int numTenBills = (int)(change / TENBILL);
+                change -= numTenBills * TENBILL;
+                int numFiveBills = (int)(change / FIVEBILL);
+                change -= numFiveBills * FIVEBILL;
+
+                int numToonies = (int)(change / TOONIE);
+                change -= numToonies * TOONIE;
+                int numLoonies = (int)(change / LOONIE);
+                change -= numLoonies * LOONIE;
+                int numQuarters = (int)(change / QUARTER);
+                change -= numQuarters * QUARTER;
+                int numDimes = (int)(change / DIME);
+                change -= numDimes * DIME;
+                int numNickels = (int)(change / NICKEL);
+                change -= numNickels * NICKEL;
+                int numPennies = (int)(change / PENNY);
+
+                // Add the change breakdown to the receipt
+                receiptText += $"Cash received: ${choosenBill}\n";
+                receiptText += $"Your change is ${change}:\n";
+                receiptText += "Breakdown :\n";
+                if (numHundredBills > 0) receiptText += $"{numHundredBills} x ${HUNDREDBILL:C}\n";
+                if (numFiftyBills > 0) receiptText += $"{numFiftyBills} x ${FIFTYBILL:C}\n";
+                if (numTwentyBills > 0) receiptText += $"{numTwentyBills} x ${TWENTYBILL:C}\n";
+                if (numTenBills > 0) receiptText += $"{numTenBills} x ${TENBILL:C}\n";
+                if (numFiveBills > 0) receiptText += $"{numFiveBills} x ${FIVEBILL:C}\n";
+                if (numToonies > 0) receiptText += $"{numToonies} x ${TOONIE:C}\n";
+                if (numLoonies > 0) receiptText += $"{numLoonies} x ${LOONIE:C}\n";
+                if (numQuarters > 0) receiptText += $"{numQuarters} x ${QUARTER:C}\n";
+                if (numDimes > 0) receiptText += $"{numDimes} x ${DIME:C}\n";
+                if (numNickels > 0) receiptText += $"{numNickels} x ${NICKEL:C}\n";
+                if (numPennies > 0) receiptText += $"{numPennies} x ${PENNY:C}\n";
+            }
 
             return receiptText;
         }
@@ -102,7 +153,7 @@ namespace FinalProject_Alejandro_Aymeric.VendingMachineOperation
         /// Clear the cart and update the given product list inventory
         /// </summary>
         /// <param name="toUpdate">Product list with the inventory to update</param>
-        /// <param name="restockItems">Wheter or not to add back to product in stoc</param>
+        /// <param name="restockItems">Wheter or not to add back to pro</param>
         public static void ClearCart(List<Product> toUpdate, bool restockItems = true)
         {
             if (restockItems)

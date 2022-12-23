@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject_Alejandro_Aymeric"
         mc:Ignorable="d"
-        Title="SelectBill" Height="325" Width="400"
+        Title="Select Bill" Height="325" Width="400"
         WindowStyle="None"
         ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen"

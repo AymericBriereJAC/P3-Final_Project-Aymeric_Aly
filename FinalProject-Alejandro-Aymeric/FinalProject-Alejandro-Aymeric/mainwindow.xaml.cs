@@ -1,6 +1,7 @@
 using FinalProject_Alejandro_Aymeric.Items;
 using FinalProject_Alejandro_Aymeric.VendingMachineOperation;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
@@ -15,18 +16,20 @@ namespace FinalProject_Alejandro_Aymeric
     {
         // lists that will be used to store the products and the ones that go into the cart
         private List<Product> products = new List<Product>();
+        private const string productsFile = "items.txt";
 
         public MainWindow()
         {
             InitializeComponent();
 
             // adding all the products from the txt file
-            AddProducts("items.txt", products);
+            AddProducts(productsFile, products);
 
             //Set the Cart listview source to the cart array
             lvCartItems.ItemsSource = Cart.CartContent;
             lvItems.ItemsSource = products;
             lblTotal.Content = $"Your total is: {Cart.Total}$";
+            lvItems.Items.Refresh();
         }
 
         /// <summary>
@@ -58,8 +61,6 @@ namespace FinalProject_Alejandro_Aymeric
             {
                 MessageBox.Show(e.Message, "An error occured", MessageBoxButton.OK, MessageBoxImage.Error); //an error occured, show the appropriate error message
             }
-
-            lvItems.Items.Refresh();
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace FinalProject_Alejandro_Aymeric
                 if (Cart.ValidateBalance(bill.ChosenBill))
                 {
                     // Show the ReceiptWindow
-                    ReceiptWindow receiptWindow = new ReceiptWindow(products, "Cash", bill.ChosenBill);
+                    ReceiptWindow receiptWindow = new ReceiptWindow("Cash", bill.ChosenBill);
                     receiptWindow.ShowDialog();
                     Cart.ClearCart(products,false);
                     lvCartItems.Items.Refresh();
@@ -133,7 +134,7 @@ namespace FinalProject_Alejandro_Aymeric
             else if (Cart.Total <= 0) MessageBox.Show($"You need to have at least one item in your cart in order to pass the checkout", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
-                ReceiptWindow receiptWindow = new ReceiptWindow(products, "Debit Card");
+                ReceiptWindow receiptWindow = new ReceiptWindow("Debit Card");
                 receiptWindow.ShowDialog();
                 Cart.ClearCart(products, false);
                 lvCartItems.Items.Refresh();

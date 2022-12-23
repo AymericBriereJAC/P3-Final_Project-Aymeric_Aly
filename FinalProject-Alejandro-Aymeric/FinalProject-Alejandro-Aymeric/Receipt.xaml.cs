@@ -24,12 +24,12 @@ namespace FinalProject_Alejandro_Aymeric
     {
         protected string receiptText;
 
-        public ReceiptWindow(List<Product> products, string paymentMethod, decimal choosenBill = -1)
+        public ReceiptWindow( string paymentMethod, decimal choosenBill = -1)
         {
             InitializeComponent();
 
             //generate the receipt and show it to the user
-            receiptText = Cart.GenerateReceipt(products, paymentMethod, choosenBill);
+            receiptText = Cart.GenerateReceipt(paymentMethod, choosenBill);
             tbReceipt.Text = receiptText;
         }
 
