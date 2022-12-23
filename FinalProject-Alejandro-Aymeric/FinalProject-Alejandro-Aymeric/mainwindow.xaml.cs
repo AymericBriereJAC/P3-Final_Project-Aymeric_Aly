@@ -112,7 +112,10 @@ namespace FinalProject_Alejandro_Aymeric
                 {
                     // Show the ReceiptWindow
                     ReceiptWindow receiptWindow = new ReceiptWindow(products, "Cash", bill.ChosenBill);
-                    receiptWindow.Show();
+                    receiptWindow.ShowDialog();
+                    Cart.ClearCart(products,false);
+                    lvCartItems.Items.Refresh();
+                    lvItems.Items.Refresh();
                 }
                 else MessageBox.Show($"You do not have the required balance to pay your order", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -132,7 +135,7 @@ namespace FinalProject_Alejandro_Aymeric
             {
                 ReceiptWindow receiptWindow = new ReceiptWindow(products, "Debit Card");
                 receiptWindow.ShowDialog();
-                Cart.ClearCart(products);
+                Cart.ClearCart(products, false);
                 lvCartItems.Items.Refresh();
                 lvItems.Items.Refresh();
             }

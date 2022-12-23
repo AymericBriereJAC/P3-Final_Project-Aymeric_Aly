@@ -18,14 +18,10 @@
             <!-- Show the content of every segment -->
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="{Binding}" Foreground="Black" FontWeight="Bold" FontSize="15"/>
-                        <Label Content="Enter the number of bills you want to use:" Margin="5"/>
-                        <TextBox x:Name="txtNumberOfBills" Width="75" Margin="5"/>
-                    </StackPanel>
+                    <Label Content="{Binding}" Foreground="Black" FontWeight="Bold" FontSize="15"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="btnPay" Content="Proceed to Payment" Margin="5" Click="btnPay_Click"/>
+        <Button Content="Pay now!" Margin="5" Click="btnPay_Click"/>
     </StackPanel>
 </Window>
