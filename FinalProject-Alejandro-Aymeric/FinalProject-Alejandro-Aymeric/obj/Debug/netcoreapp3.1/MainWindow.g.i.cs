@@ -109,7 +109,7 @@ namespace FinalProject_Alejandro_Aymeric {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FinalProject-Alejandro-Aymeric;component/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PIIIProject;V1.0.0.0;component/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\mainwindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

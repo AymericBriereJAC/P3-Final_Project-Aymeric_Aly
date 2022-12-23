@@ -15,9 +15,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\P3-Project\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric.csproj",
-      "projectName": "FinalProject-Alejandro-Aymeric",
-      "projectPath": "C:\\P3-Project\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric.csproj",
+      "projectUniqueName": "C:\\P3-Project\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\PIIIProject.csproj",
+      "projectName": "PIIIProject",
+      "projectPath": "C:\\P3-Project\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\PIIIProject.csproj",
       "packagesPath": "C:\\Users\\Aymeric Briere\\.nuget\\packages\\",
       "outputPath": "C:\\P3-Project\\P3-Final_Project-Aymeric_Aly\\FinalProject-Alejandro-Aymeric\\FinalProject-Alejandro-Aymeric\\obj\\",
       "projectStyle": "PackageReference",
