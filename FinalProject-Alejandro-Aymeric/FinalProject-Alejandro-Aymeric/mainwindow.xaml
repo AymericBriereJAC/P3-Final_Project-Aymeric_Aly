@@ -14,7 +14,7 @@
             <ColumnDefinition Width="261*" />
 
         </Grid.ColumnDefinitions>
-        
+
         <!-- Section For all product related elements -->
         <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Center" 
                FontSize="30" Margin="0,16,0,178" Width="137" Grid.Column="1"/>
@@ -94,10 +94,12 @@
         </ListView>
         <!--Button to delete the selected product from the cart-->
         <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" 
-                Margin="141,465,119,202" Click="btnDelete_Click" FontSize="18"
-                FontWeight="Bold"/>
+                 Click="btnDelete_Click" Margin="31,465,252,202" 
+                FontSize="18" FontWeight="Bold" Panel.ZIndex="200"/>
+        <Button Grid.Column="2" x:Name="btnClearCart" Content="Clear cart" 
+                Click="btnClearCart_Click" Margin="249,465,33,202" 
+                FontSize="18" FontWeight="Bold"/>
 
-        <Button Grid.Column="2" x:Name="btnClearCart" Content="Clear cart" Click="btnClearCart_Click" Margin="249,458,42,221"/>
 
         <!-- Section for payment -->
         <GroupBox Grid.Column="2" VerticalAlignment="Top" Height="179" Margin="10,516,10,0" 

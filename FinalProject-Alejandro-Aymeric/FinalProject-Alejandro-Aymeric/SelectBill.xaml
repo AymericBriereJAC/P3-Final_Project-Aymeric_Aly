@@ -26,6 +26,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="btnPay" Content="Proceed to Payment" Margin="5" Click="btnPay_Click" IsEnabled="False"/>
+        <Button x:Name="btnPay" Content="Proceed to Payment" Margin="5" Click="btnPay_Click"/>
     </StackPanel>
 </Window>

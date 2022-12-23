@@ -2,20 +2,9 @@ using FinalProject_Alejandro_Aymeric.Items;
 using FinalProject_Alejandro_Aymeric.VendingMachineOperation;
 using System;
 using System.Collections.Generic;
-using System.DirectoryServices.ActiveDirectory;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FinalProject_Alejandro_Aymeric
 {
@@ -30,14 +19,14 @@ namespace FinalProject_Alejandro_Aymeric
         public MainWindow()
         {
             InitializeComponent();
-            
+
             // adding all the products from the txt file
             AddProducts("items.txt", products);
 
             //Set the Cart listview source to the cart array
             lvCartItems.ItemsSource = Cart.CartContent;
             lvItems.ItemsSource = products;
-           
+            lblTotal.Content = $"Your total is: {Cart.Total}$";
         }
 
         /// <summary>
@@ -55,7 +44,7 @@ namespace FinalProject_Alejandro_Aymeric
 
                     using (StreamReader reader = new StreamReader(file))
                     {
-                        while((line = reader.ReadLine()) != null)
+                        while ((line = reader.ReadLine()) != null)
                         {
                             // splitting the line of text to extract every single property
                             string[] itemOptions = line.Split(',');
@@ -81,7 +70,7 @@ namespace FinalProject_Alejandro_Aymeric
         private void AddCart_Click(object sender, RoutedEventArgs e)
         {
             if (lvItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to add to the cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
-            if (products[lvItems.SelectedIndex].Quantity <= 0)
+            else if (products[lvItems.SelectedIndex].Quantity <= 0)
             {
                 MessageBox.Show($"No {products[lvItems.SelectedIndex].Name} left!", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
                 products.RemoveAt(lvItems.SelectedIndex);
@@ -91,9 +80,16 @@ namespace FinalProject_Alejandro_Aymeric
             {
                 Cart.CartContent.Add(products[lvItems.SelectedIndex]);
                 products[lvItems.SelectedIndex].Quantity -= 1;
+
+                if (products[lvItems.SelectedIndex].Quantity <= 0)
+                {
+                    products.RemoveAt(lvItems.SelectedIndex);
+                    lvItems.SelectedIndex = -1;
+                }
+
                 lvCartItems.Items.Refresh();
                 lvItems.Items.Refresh();
-                
+                lblTotal.Content = $"Your total is: {Cart.Total}$";
             }
         }
 
@@ -112,9 +108,13 @@ namespace FinalProject_Alejandro_Aymeric
                 SelectBill bill = new SelectBill();
                 bill.ShowDialog();
 
-                // Show the ReceiptWindow
-                ReceiptWindow receiptWindow = new ReceiptWindow(products, "Cash", bill.ChoosenBill);
-                receiptWindow.Show();
+                if (Cart.ValidateBalance(bill.ChosenBill))
+                {
+                    // Show the ReceiptWindow
+                    ReceiptWindow receiptWindow = new ReceiptWindow(products, "Cash", bill.ChosenBill);
+                    receiptWindow.Show();
+                }
+                else MessageBox.Show($"You do not have the required balance to pay your order", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -142,43 +142,51 @@ namespace FinalProject_Alejandro_Aymeric
         /// <param name="e"></param>
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            if(lvCartItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to remove from your cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
+            if (lvCartItems.SelectedIndex == -1) MessageBox.Show($"Please select an item to remove from your cart", "An error occured", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
                 Cart.CartContent[lvCartItems.SelectedIndex].Quantity += 1;
                 Cart.CartContent.RemoveAt(lvCartItems.SelectedIndex);
                 lvCartItems.Items.Refresh();
                 lvItems.Items.Refresh();
-                
+                lblTotal.Content = $"Your total is: {Cart.Total}$";
             }
         }
 
-        private void lvItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Clear the cart and update the product list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClearCart_Click(object sender, RoutedEventArgs e)
         {
-            
-            for(int i= 0; i < lvCartItems.Items.Count; i++)
+            bool cartItemFound = false;
+
+            for (int i = 0; i < lvCartItems.Items.Count; i++)
             {
-
-                if (Cart.CartContent[i].Quantity >= 1)
+                for (int y = 0; y < products.Count; y++)
                 {
-                    for(int y=0; y < products.Count; y++)
+                    cartItemFound = false;
+
+                    if (Cart.CartContent[i] == products[y]) //the matching product was found, update the quantity
                     {
-
-                       
-
+                        products[y].Quantity += 1;
+                        cartItemFound = true;
+                        break;
                     }
-                    Cart.CartContent[i].Quantity += 1;
                 }
 
+                if (!cartItemFound)
+                {
+                    //the product was not in the product list(was out of stock) add it back in stock
+                    Cart.CartContent[i].Quantity += 1;
+                    products.Add(Cart.CartContent[i]);
+                }
             }
+
             Cart.CartContent.Clear();
-            
             lvCartItems.Items.Refresh();
+            lvItems.Items.Refresh();
         }
     }
 }

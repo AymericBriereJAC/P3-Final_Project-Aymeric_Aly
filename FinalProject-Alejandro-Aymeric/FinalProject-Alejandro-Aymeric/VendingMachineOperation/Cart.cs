@@ -6,14 +6,20 @@ using System.Text;
 
 namespace FinalProject_Alejandro_Aymeric.VendingMachineOperation
 {
-    /*
+    /* This class take care of all operations related to the shopping cart such as:
+     * keeping track of the elements in the cart, get the total of the cart, 
+     * validate that the user has enough money to pay, generate a receipt
+     * 
      * OOP Pilliar Encapsulation: Cart class should be static because it make no sense to
      * have multiple cart. We will have multiple class of product, but only 1 cart per user
      */
-    internal static class Cart
+    public static class Cart
     {
-        private static List<Product> _cart = new List<Product>();
+        private static List<Product> _cart = new List<Product>();   //list of the products in the cart
 
+        /// <summary>
+        /// Get the total of the cart
+        /// </summary>
         public static decimal Total
         {
             get
@@ -29,8 +35,16 @@ namespace FinalProject_Alejandro_Aymeric.VendingMachineOperation
             }
         }
 
+        /// <summary>
+        /// Get and set the content of the cart
+        /// </summary>
         public static List<Product> CartContent { get { return _cart; } set { _cart = value; } }
 
+        /// <summary>
+        /// Get the quantity of a certian product in the cart
+        /// </summary>
+        /// <param name="productName">The name of the item to count</param>
+        /// <returns></returns>
         public static int GetItemQuantity(string productName)
         {
             int counter = 0;
@@ -42,6 +56,11 @@ namespace FinalProject_Alejandro_Aymeric.VendingMachineOperation
             return counter;
         }
 
+        /// <summary>
+        /// Validate that the user has the required balance to pay his cart
+        /// </summary>
+        /// <param name="balance">money the user has</param>
+        /// <returns></returns>
         public static bool ValidateBalance(decimal balance)
         {
             //verify that the user has the fund to pay his cart
@@ -49,14 +68,21 @@ namespace FinalProject_Alejandro_Aymeric.VendingMachineOperation
             return Total <= balance;
         }
 
-        public static string GenerateReceipt(string paymentMethod, decimal choosenBill = -1)
+        /// <summary>
+        /// Generate a receipt for the user
+        /// </summary>
+        /// <param name="toGenerate">The avaialable products that could be in the cart</param>
+        /// <param name="paymentMethod">How the user will pay (Cash or Debit)</param>
+        /// <param name="choosenBill">If the user paid with cash the bill he used (optional)</param>
+        /// <returns></returns>
+        public static string GenerateReceipt(List<Product> toGenerate,string paymentMethod, decimal choosenBill = -1)
         {
             string receiptText = "Thank you for your purchase!\n\n";
 
             receiptText += "Items:\n";
             int currentItemQuantity = 0;
 
-            foreach (Product item in CartContent)
+            foreach (Product item in toGenerate)
             {
                 currentItemQuantity = Cart.GetItemQuantity(item.Name);
 
