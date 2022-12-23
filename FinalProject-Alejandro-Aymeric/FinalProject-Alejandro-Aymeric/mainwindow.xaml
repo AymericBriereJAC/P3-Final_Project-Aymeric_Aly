@@ -107,7 +107,6 @@
                   Header="Payment Method" FontSize="15" FontWeight="DemiBold" >
             <StackPanel Height="232" Margin="0,0,-11,0" >
                 <!--Panel where user can select their payment method-->
-
                 <Label Name="lblTotal" HorizontalAlignment="Center"/>
                 <Label Content="Select the bill you are going to pay with if you are paying cash:" Margin="5"/>
                 <Button Content="Pay with cash" Click="payCash_Click" Width="341" Margin="5"/>
