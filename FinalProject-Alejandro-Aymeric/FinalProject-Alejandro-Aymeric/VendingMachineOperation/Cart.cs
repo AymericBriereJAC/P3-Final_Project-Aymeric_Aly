@@ -75,19 +75,24 @@ namespace FinalProject_Alejandro_Aymeric.VendingMachineOperation
         /// <param name="paymentMethod">How the user will pay (Cash or Debit)</param>
         /// <param name="choosenBill">If the user paid with cash the bill he used (optional)</param>
         /// <returns></returns>
-        public static string GenerateReceipt(List<Product> toGenerate,string paymentMethod, decimal choosenBill = -1)
+        public static string GenerateReceipt(string paymentMethod, decimal choosenBill = -1)
         {
+            List<Product> printed = new List<Product>();
+
             string receiptText = "Thank you for your purchase!\n\n";
 
             receiptText += "Items:\n";
             int currentItemQuantity = 0;
 
-            foreach (Product item in toGenerate)
+            foreach (Product item in CartContent)
             {
                 currentItemQuantity = Cart.GetItemQuantity(item.Name);
 
-                if (currentItemQuantity > 0)
+                if (currentItemQuantity > 0 && !printed.Contains(item))
+                {
                     receiptText += $"{item.Name} x{currentItemQuantity} @ ${item.Price:F2} each = ${item.Price * currentItemQuantity:F2}\n";
+                    printed.Add(item);
+                }
             }
 
             receiptText += $"\nTotal: ${Cart.Total:F2}\n";
@@ -102,7 +107,7 @@ namespace FinalProject_Alejandro_Aymeric.VendingMachineOperation
         /// Clear the cart and update the given product list inventory
         /// </summary>
         /// <param name="toUpdate">Product list with the inventory to update</param>
-        /// <param name="restockItems">Wheter or not to add back to product in stoc</param>
+        /// <param name="restockItems">Wheter or not to add back to pro</param>
         public static void ClearCart(List<Product> toUpdate, bool restockItems = true)
         {
             if (restockItems)
