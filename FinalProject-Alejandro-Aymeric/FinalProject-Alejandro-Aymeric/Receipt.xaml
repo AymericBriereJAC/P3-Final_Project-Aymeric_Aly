@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject_Alejandro_Aymeric"
         mc:Ignorable="d"
-        Title="ReceiptWindow" SizeToContent="WidthAndHeight">
+        Title="Receipt" SizeToContent="WidthAndHeight">
     <StackPanel>
         <!-- Contain all the text related to the receipt is populated in the code -->
         <TextBlock x:Name="tbReceipt" Margin="12"/>
