@@ -49,14 +49,14 @@ namespace FinalProject_Alejandro_Aymeric.VendingMachineOperation
             return Total <= balance;
         }
 
-        public static string GenerateReceipt(string paymentMethod, decimal choosenBill = -1)
+        public static string GenerateReceipt(List<Product> toGenerate,string paymentMethod, decimal choosenBill = -1)
         {
             string receiptText = "Thank you for your purchase!\n\n";
 
             receiptText += "Items:\n";
             int currentItemQuantity = 0;
 
-            foreach (Product item in CartContent)
+            foreach (Product item in toGenerate)
             {
                 currentItemQuantity = Cart.GetItemQuantity(item.Name);
 

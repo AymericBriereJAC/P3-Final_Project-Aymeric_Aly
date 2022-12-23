@@ -14,7 +14,7 @@
             <ColumnDefinition Width="261*" />
 
         </Grid.ColumnDefinitions>
-        
+
         <!-- Section For all product related elements -->
         <Label Content="Products" FontWeight="Bold" HorizontalAlignment="Center" 
                FontSize="30" Margin="0,16,0,178" Width="137" Grid.Column="1"/>
@@ -94,23 +94,12 @@
         </ListView>
         <!--Button to delete the selected product from the cart-->
         <Button Grid.Column="2" x:Name="btnDelete" Content="Remove From Cart" 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                Margin="141,465,119,202" Click="btnDelete_Click" FontSize="18"
-                FontWeight="Bold"/>
-=======
-                Margin="53,458,238,221" Click="btnDelete_Click"/>
-        <Button Grid.Column="2" x:Name="btnClearCart" Content="Clear cart" Click="btnClearCart_Click" Margin="249,458,42,221"/>
->>>>>>> Stashed changes
-=======
-                Margin="53,458,238,221" Click="btnDelete_Click"/>
-        <Button Grid.Column="2" x:Name="btnClearCart" Content="Clear cart" Click="btnClearCart_Click" Margin="249,458,42,221"/>
->>>>>>> Stashed changes
-=======
-                Margin="53,458,238,221" Click="btnDelete_Click"/>
-        <Button Grid.Column="2" x:Name="btnClearCart" Content="Clear cart" Click="btnClearCart_Click" Margin="249,458,42,221"/>
->>>>>>> Stashed changes
+                 Click="btnDelete_Click" Margin="31,465,252,202" 
+                FontSize="18" FontWeight="Bold" Panel.ZIndex="200"/>
+        <Button Grid.Column="2" x:Name="btnClearCart" Content="Clear cart" 
+                Click="btnClearCart_Click" Margin="249,465,33,202" 
+                FontSize="18" FontWeight="Bold"/>
+
 
         <!-- Section for payment -->
         <GroupBox Grid.Column="2" VerticalAlignment="Top" Height="179" Margin="10,516,10,0" 
@@ -118,19 +107,8 @@
                   Header="Payment Method" FontSize="15" FontWeight="DemiBold" >
             <StackPanel Height="232" Margin="0,0,-11,0" >
                 <!--Panel where user can select their payment method-->
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
                 <Label Name="lblTotal" HorizontalAlignment="Center"/>
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
                 <Label Content="Select the bill you are going to pay with if you are paying cash:" Margin="5"/>
                 <Button Content="Pay with cash" Click="payCash_Click" Width="341" Margin="5"/>
                 <Button Content="Pay with credit card" Click="payDebit_Click" Margin="5" Width="341"/>

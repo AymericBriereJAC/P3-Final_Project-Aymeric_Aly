@@ -22,11 +22,14 @@ namespace FinalProject_Alejandro_Aymeric
     /// </summary>
     public partial class ReceiptWindow : Window
     {
+        protected string receiptText;
+
         public ReceiptWindow(List<Product> products, string paymentMethod, decimal choosenBill = -1)
         {
             InitializeComponent();
 
-            tbReceipt.Text = Cart.GenerateReceipt(paymentMethod, choosenBill);
+            receiptText = Cart.GenerateReceipt(products, paymentMethod, choosenBill);
+            tbReceipt.Text = receiptText;
         }
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
